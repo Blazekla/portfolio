@@ -24,16 +24,26 @@ function ContentCard() {
       <CardActionArea>
         <CardMedia
           component="img"
-          //   image="https://source.unsplash.com/random"
-          //   image={seal}
-          image="./sealpup.jpg"
+          alt="Waving photogenic seal"
+          // height="200"
+          //   image="https://source.unsplash.com/random" this works online
+          //   image={seal} this only works went you import the image above
+          image="./sealpup.jpg" //This works since the image was moved to the public folder
           title="Photogenic Seal Pup"
         />
-        {/* <img src={process.env.PUBLIC_URL + "/sealpup.jpg"} /> */}
         <CardContent>
           <Typography>This is the cutest seal pup</Typography>
         </CardContent>
       </CardActionArea>
+
+      <CardActions>
+        <Button size="small" color="primary">
+          View Code
+        </Button>
+        <Button size="small" color="primary">
+          Case Study
+        </Button>
+      </CardActions>
     </Card>
   );
 }

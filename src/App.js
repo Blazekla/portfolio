@@ -8,24 +8,25 @@ import { CssBaseline } from "@material-ui/core";
 import Footer from "./components/Footer";
 import MenuAppBar from "./components/AppBar";
 import ContentCard from "./components/sub_components/Cards";
+import HeroBanner from "./components/sub_components/HeroUnit";
 
+import TestBar from "./components/sub_components/Test";
 function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <MenuAppBar />
-      <Typography variant="h1" component="h2" gutterBottom align="center">
-        Welcome to my page.
-      </Typography>
-      <Typography align="center" variant="h4">
-        Hire me!
-      </Typography>
-      <Typography>THis is the robot Font dawg! Howdy aeiou</Typography>
-      <br></br>
-      <ContentCard />
-      {/* <About /> */}
-      {/* <Projects /> */}
-      {/* <Contact /> */}
+      {/* <MenuAppBar /> */}
+      <TestBar />
+      <HeroBanner />
+      <About />
+      <br />
+      <br />
+      <br />
+      <Projects />
+
+      <br />
+      <br />
+      <Contact />
       <Footer />
     </React.Fragment>
   );

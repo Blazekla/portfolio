@@ -12,6 +12,8 @@ import FormGroup from "@material-ui/core/FormGroup";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 
+import useTheme from "@material-ui/core/styles/useTheme";
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -25,6 +27,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function MenuAppBar() {
+  console.log(useTheme());
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
