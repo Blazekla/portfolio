@@ -10,7 +10,7 @@ import {
   Typography
 } from "@material-ui/core";
 
-import seal from "./sealpup.jpg";
+// import seal from "./sealpup.jpg";
 const useStyles = makeStyles({
   card: {
     maxWidth: 345

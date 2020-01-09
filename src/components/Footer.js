@@ -36,7 +36,7 @@ function Footer() {
           color="textSecondary"
           component="p"
         >
-          Live A Focused And Strenous Life
+          Live A Focused And Strenuous Life
         </Typography>
         <Copyright />
       </footer>

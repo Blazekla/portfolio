@@ -1,110 +1,163 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import ToolBar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import Switch from "@material-ui/core/Switch";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormGroup from "@material-ui/core/FormGroup";
+import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 
-import useTheme from "@material-ui/core/styles/useTheme";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import MailIcon from "@material-ui/icons/Mail";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import MoreIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles(theme => ({
-  root: {
+  grow: {
     flexGrow: 1
   },
-  menuButton: {
-    marginRight: theme.spacing(2)
+  title: {},
+  sectionDesktop: {
+    display: "none",
+    [theme.breakpoints.up("sm")]: {
+      display: "flex"
+    }
   },
-  title: {
-    flexGrow: 1
+  sectionMobile: {
+    display: "flex",
+    [theme.breakpoints.up("sm")]: {
+      display: "none"
+    }
   }
 }));
 
-export default function MenuAppBar() {
-  console.log(useTheme());
+function MenuAppBar() {
   const classes = useStyles();
-  const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const [mobileMoreAnchorEl, setMobileMoreAchorEl] = React.useState(null);
 
-  const handleChange = event => {
-    setAuth(event.target.checked);
-  };
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleMenu = event => {
+  const handleProfileMenuOpen = event => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleMobileMenuClose = () => {
+    setMobileMoreAchorEl(null);
   };
 
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const handleMobileMenuOpen = event => {
+    setMobileMoreAchorEl(event.currentTarget);
+  };
+
+  const menuId = "primary-search-account-menu"; //What does this line do?
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+    </Menu>
+  );
+
+  const mobileMenuId = "primary-search-account-menu-mobile";
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem>
+        <IconButton aria-label="show new emails" color="inherit">
+          <MailIcon />
+        </IconButton>
+        Messages
+      </MenuItem>
+      <MenuItem>
+        <IconButton aria-label="show new notifications" color="inherit">
+          <NotificationsIcon />
+        </IconButton>
+        Notifications
+      </MenuItem>
+      <MenuItem>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aira-haspopup="true"
+          color="inherit"
+        >
+          <AccountCircle />
+        </IconButton>
+        Profile
+      </MenuItem>
+    </Menu>
+  );
+
   return (
-    <div className={classes.root}>
-      <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={auth}
-              onChange={handleChange}
-              aria-label="login switch"
-            />
-          }
-          label={auth ? "Logout" : "Login"}
-        />
-      </FormGroup>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Photos
+    <div className={classes.grow}>
+      <AppBar position="sticky">
+        <ToolBar>
+          <Typography className={classes.title} variant="h6" noWrap>
+            LC
           </Typography>
-          {auth && (
-            <div>
-              <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right"
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right"
-                }}
-                open={open}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-              </Menu>
-            </div>
-          )}
-        </Toolbar>
+          <div className={classes.grow} />
+          {/*This enables the center spacing*/}
+          <div className={classes.sectionDesktop}>
+            <IconButton aria-label="show new emails" color="inherit">
+              <MailIcon />
+            </IconButton>
+            <IconButton aria-label="show new notifications" color="inherit">
+              <NotificationsIcon />
+            </IconButton>
+            <IconButton
+              aria-label="show new emails"
+              edge="end"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+            >
+              <AccountCircle />
+            </IconButton>
+          </div>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label="show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
+          </div>
+        </ToolBar>
       </AppBar>
+      {renderMobileMenu}
+      {renderMenu}
     </div>
   );
 }
+
+export default MenuAppBar;
+
+// import useTheme from "@material-ui/core/styles/useTheme";
+
+// export default function MenuAppBar() {
+// console.log(useTheme());

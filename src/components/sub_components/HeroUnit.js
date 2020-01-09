@@ -9,7 +9,11 @@ function HeroUnit() {
     <React.Fragment>
       <Container
         maxWidth="md"
-        // style={{ backgroundColor: "green" }}
+        style={{
+          backgroundColor: "inherit",
+          padding: "50px",
+          marginBottom: "40px"
+        }}
       >
         <Typography
           component="h1"
@@ -27,7 +31,7 @@ function HeroUnit() {
           // style={{ backgroundColor: "orange" }}
           // paragraph
         >
-          Luis Cristo focuses on professional React applications and websites
+          Luis focuses on professional React applications and websites
         </Typography>
 
         <Grid
@@ -46,11 +50,11 @@ function HeroUnit() {
               Secondary call to action
             </Button>
           </Grid>
-          <Grid item>
+          {/* <Grid item>
             <Button variant="outlined" color="primary">
               Terciary call to action
             </Button>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </React.Fragment>
@@ -58,13 +62,3 @@ function HeroUnit() {
 }
 
 export default HeroUnit;
-
-{
-  /* <Typography variant="h1" component="h2" gutterBottom align="center">
-  Welcome to my page.
-</Typography>
-<Typography align="center" variant="h4">
-  Hire me!
-</Typography>
-<Typography>THis is the robot Font dawg! Howdy aeiou</Typography> */
-}
