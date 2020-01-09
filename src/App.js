@@ -11,7 +11,7 @@ import MenuAppBar from "./components/AppBar";
 import HeroBanner from "./components/sub_components/HeroUnit";
 import Container from "@material-ui/core/Container";
 
-import TestBar from "./components/sub_components/Test";
+import TestBar from "./components/sub_components/test";
 function App() {
   return (
     <React.Fragment>
