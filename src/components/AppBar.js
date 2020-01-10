@@ -6,11 +6,13 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import Button from "@material-ui/core/Button";
 
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
+import { Container } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -23,18 +25,35 @@ const useStyles = makeStyles(theme => ({
       display: "flex"
     }
   },
+  appBar: {
+    // alignItems: "center",
+    justifyContent: "space-between"
+  },
   sectionMobile: {
     display: "flex",
     [theme.breakpoints.up("sm")]: {
       display: "none"
     }
+  },
+  toolbarContainer: {
+    // minHeight: "50px",
+    flex: "1",
+    alignItems: "center",
+    justifyContent: "space-between",
+    display: "flex",
+    flexWrap: "nowrap",
+    backgroundColor: "transparent"
+    // maxWidth: "540px"
+  },
+  button: {
+    flex: 1
   }
 }));
 
 function MenuAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -44,7 +63,7 @@ function MenuAppBar() {
   };
 
   const handleMobileMenuClose = () => {
-    setMobileMoreAchorEl(null);
+    setMobileMoreAnchorEl(null);
   };
 
   const handleMenuClose = () => {
@@ -53,10 +72,47 @@ function MenuAppBar() {
   };
 
   const handleMobileMenuOpen = event => {
-    setMobileMoreAchorEl(event.currentTarget);
+    setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const menuId = "primary-search-account-menu"; //What does this line do?
+  const mobileMenuId = "primary-search-account-menu-mobile";
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem>
+        <IconButton aria-label="show 4 new mails" color="inherit">
+          <MailIcon />
+        </IconButton>
+        <p>Messages</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton aria-label="show 11 new notifications" color="inherit">
+          <NotificationsIcon />
+        </IconButton>
+        <p>Notifications</p>
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+          <AccountCircle />
+        </IconButton>
+        <p>Profile</p>
+      </MenuItem>
+    </Menu>
+  );
+
+  const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
@@ -72,50 +128,12 @@ function MenuAppBar() {
     </Menu>
   );
 
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton aria-label="show new emails" color="inherit">
-          <MailIcon />
-        </IconButton>
-        Messages
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show new notifications" color="inherit">
-          <NotificationsIcon />
-        </IconButton>
-        Notifications
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aira-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        Profile
-      </MenuItem>
-    </Menu>
-  );
-
   return (
-    <div className={classes.grow}>
-      <AppBar position="sticky">
-        <ToolBar>
-          <Typography className={classes.title} variant="h6" noWrap>
-            LC
-          </Typography>
+    // <div className={classes.grow}>
+    <Container maxWidth="md">
+      <AppBar position="fixed" className={classes.appBar}>
+        <ToolBar className={classes.toolbarContainer}>
+          <Button>LC</Button>
           <div className={classes.grow} />
           {/*This enables the center spacing*/}
           <div className={classes.sectionDesktop}>
@@ -149,9 +167,10 @@ function MenuAppBar() {
           </div>
         </ToolBar>
       </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </div>
+      // {renderMobileMenu}
+      // {renderMenu}
+    </Container>
+    // </div>
   );
 }
 

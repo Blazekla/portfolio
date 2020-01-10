@@ -10,7 +10,7 @@ function HeroUnit() {
       <Container
         maxWidth="md"
         style={{
-          backgroundColor: "inherit",
+          backgroundColor: "green",
           padding: "50px",
           marginBottom: "40px"
         }}
