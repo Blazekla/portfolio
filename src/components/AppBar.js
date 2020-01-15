@@ -26,8 +26,10 @@ const useStyles = makeStyles(theme => ({
     }
   },
   appBar: {
-    // alignItems: "center",
-    justifyContent: "space-between"
+    alignItems: "center",
+    justifyContent: "space-between",
+    backgroundColor: "transparent"
+    // width: "inherit"
   },
   sectionMobile: {
     display: "flex",
@@ -36,6 +38,24 @@ const useStyles = makeStyles(theme => ({
     }
   },
   toolbarContainer: {
+    paddingRight: "15px",
+    paddingLeft: "15px",
+    marginRight: "auto",
+    marginLeft: "auto",
+    width: "100%",
+
+    "@media (min-width: 576px)": {
+      maxWidth: "540px"
+    },
+    "@media (min-width: 768px)": {
+      maxWidth: "720px"
+    },
+    "@media (min-width: 992px)": {
+      maxWidth: "960px"
+    },
+    "@media (min-width: 1200px)": {
+      maxWidth: "1140px"
+    },
     // minHeight: "50px",
     flex: "1",
     alignItems: "center",
@@ -43,7 +63,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexWrap: "nowrap",
     backgroundColor: "transparent"
-    // maxWidth: "540px"
+    // flex: "1"
   },
   button: {
     flex: 1
@@ -129,19 +149,25 @@ function MenuAppBar() {
   );
 
   return (
-    // <div className={classes.grow}>
-    <Container maxWidth="md">
-      <AppBar position="fixed" className={classes.appBar}>
+    <div className={classes.grow}>
+      {/* <Container maxWidth="md"> */}
+      <AppBar
+        position="fixed"
+        // style={{ width: "500px" }}
+        className={classes.appBar}
+      >
         <ToolBar className={classes.toolbarContainer}>
-          <Button>LC</Button>
-          <div className={classes.grow} />
+          <div>
+            <Button>LC</Button>
+          </div>
+          {/* <div className={classes.grow} /> */}
           {/*This enables the center spacing*/}
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show new emails" color="inherit">
-              <MailIcon />
+              <MailIcon style={{ fill: "black" }} />
             </IconButton>
             <IconButton aria-label="show new notifications" color="inherit">
-              <NotificationsIcon />
+              <NotificationsIcon style={{ fill: "black" }} />
             </IconButton>
             <IconButton
               aria-label="show new emails"
@@ -151,7 +177,7 @@ function MenuAppBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle style={{ fill: "black" }} />
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
@@ -162,21 +188,16 @@ function MenuAppBar() {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreIcon />
+              <MoreIcon style={{ fill: "black" }} />
             </IconButton>
           </div>
         </ToolBar>
       </AppBar>
-      // {renderMobileMenu}
-      // {renderMenu}
-    </Container>
-    // </div>
+      {renderMobileMenu}
+      {renderMenu}
+      {/* </Container> */}
+    </div>
   );
 }
 
 export default MenuAppBar;
-
-// import useTheme from "@material-ui/core/styles/useTheme";
-
-// export default function MenuAppBar() {
-// console.log(useTheme());
