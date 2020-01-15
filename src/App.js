@@ -4,7 +4,7 @@ import React from "react";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import About from "./components/About";
-import { CssBaseline } from "@material-ui/core";
+import { CssBaseline, Button } from "@material-ui/core";
 import Footer from "./components/Footer";
 import MenuAppBar from "./components/AppBar";
 // import ContentCard from "./components/sub_components/Cards";
@@ -16,29 +16,31 @@ function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <MenuAppBar />
-      {/* <TestBar /> */}
-      <Container>
-        <HeroBanner />
+      <div style={{ backgroundColor: "rgba(41, 61, 90, 0.99" }}>
+        <MenuAppBar />
+        {/* <TestBar /> */}
 
-        <div
-          style={{
-            margin: "-60px 30px 0px",
-            borderRadius: "6px",
-            // zIndex: "4",
-            boxShadow:
-              "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
-          }}
-        >
-          <Projects />
-          {/* Add margins during design phase*/}
-          <div style={{ marginTop: "30px", backgroundColor: "red" }}>
-            <About />
-            <Contact />
+        <HeroBanner />
+        <Container>
+          <div
+          // style={{
+          //   margin: "-60px 30px 0px",
+          //   borderRadius: "6px",
+          //   // zIndex: "4",
+          //   boxShadow:
+          //     "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
+          // }}
+          >
+            <Projects />
+            {/* Add margins during design phase*/}
+            <div style={{ marginTop: "30px", backgroundColor: "red" }}>
+              <About />
+              <Contact />
+            </div>
           </div>
-        </div>
-      </Container>
-      <Footer />
+        </Container>
+        <Footer />
+      </div>
     </React.Fragment>
   );
 }

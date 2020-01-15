@@ -10,46 +10,40 @@ function HeroUnit() {
       <Container
         maxWidth="md"
         style={{
-          backgroundColor: "green",
-          padding: "50px",
+          backgroundColor: "inherit",
+          paddingTop: "150px",
           marginBottom: "40px"
+          // marginTop: "150px"
         }}
       >
+        <Typography color="textPrimary">Hi, my name is</Typography>
         <Typography
-          component="h1"
-          // variant="h2"
-          align="center"
-          color="textPrimary"
-          gutterBottom
-        >
-          React Developer
-        </Typography>
-        <Typography
-          variant="h5"
-          align="center"
+          variant="h3"
+          // align="center"
           color="textSecondary"
           // style={{ backgroundColor: "orange" }}
           // paragraph
         >
-          Luis focuses on professional React applications and websites
+          Luis Cristo.
         </Typography>
-
+        <Typography
+        // style={{ width: "500px" }}
+        >
+          I will help you create professional and beatiful solutions for all
+          your web development needs.
+        </Typography>
         <Grid
           container
           spacing={4}
-          justify="center"
-          // style={{ backgroundColor: "blue" }}
+          justify="flex-start"
+          style={{ marginTop: "20px" }}
         >
           <Grid item>
             <Button variant="contained" color="primary">
-              Primary call to action
+              Contact
             </Button>
           </Grid>
-          <Grid item>
-            <Button variant="outlined" color="primary">
-              Secondary call to action
-            </Button>
-          </Grid>
+
           {/* <Grid item>
             <Button variant="outlined" color="primary">
               Terciary call to action

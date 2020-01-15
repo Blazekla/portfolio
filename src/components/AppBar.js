@@ -28,7 +28,8 @@ const useStyles = makeStyles(theme => ({
   appBar: {
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
+    boxShadow: "none"
     // width: "inherit"
   },
   sectionMobile: {
