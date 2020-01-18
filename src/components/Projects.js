@@ -27,7 +27,7 @@ import ContentCard from "./sub_components/Cards";
 //   }
 // }));
 
-const count = [1, 2, 3, 4];
+const count = [1, 2, 3, 4, 5, 6];
 function Projects() {
   // const theme = useTheme();
   // const matches = useMediaQuery(theme.breakpoints.up("sm"));

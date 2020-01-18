@@ -16,7 +16,7 @@ function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <div style={{ backgroundColor: "rgba(41, 61, 90, 0.99" }}>
+      <div style={{ backgroundColor: "rgba(41, 61, 90, 0.99)" }}>
         <MenuAppBar />
         {/* <TestBar /> */}
 
@@ -34,8 +34,8 @@ function App() {
             <Projects />
             {/* Add margins during design phase*/}
             <div style={{ marginTop: "30px", backgroundColor: "red" }}>
-              <About />
-              <Contact />
+              {/* <About />
+              <Contact /> */}
             </div>
           </div>
         </Container>
