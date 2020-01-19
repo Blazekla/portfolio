@@ -1,17 +1,18 @@
 import React from "react";
 // import Typography from "@material-ui/core/Typography";
 // import "typeface-roboto";
+import { CssBaseline, Button } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
+// import ContentCard from "./components/sub_components/Cards";
+import TestBar from "./components/sub_components/test";
+
+import HeroBanner from "./components/HeroUnit";
+import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import About from "./components/About";
-import { CssBaseline, Button } from "@material-ui/core";
 import Footer from "./components/Footer";
 import MenuAppBar from "./components/AppBar";
-// import ContentCard from "./components/sub_components/Cards";
-import HeroBanner from "./components/sub_components/HeroUnit";
-import Container from "@material-ui/core/Container";
 
-import TestBar from "./components/sub_components/test";
 function App() {
   return (
     <React.Fragment>
@@ -22,15 +23,7 @@ function App() {
 
         <HeroBanner />
         <Container>
-          <div
-          // style={{
-          //   margin: "-60px 30px 0px",
-          //   borderRadius: "6px",
-          //   // zIndex: "4",
-          //   boxShadow:
-          //     "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
-          // }}
-          >
+          <div>
             <Projects />
             {/* Add margins during design phase*/}
             <div style={{ marginTop: "30px", backgroundColor: "red" }}>
