@@ -3,22 +3,43 @@ import React from "react";
 // import "typeface-roboto";
 import { CssBaseline, Button } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
-// import ContentCard from "./components/sub_components/Cards";
+
 import TestBar from "./components/sub_components/test";
 
+import MenuAppBar from "./components/AppBar";
 import HeroBanner from "./components/HeroUnit";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import MenuAppBar from "./components/AppBar";
+
+import theme from "./styles/theme";
+import {
+  createMuiTheme,
+  makeStyles,
+  ThemeProvider
+} from "@material-ui/core/styles";
+
+const useStyles = makeStyles(theme);
+
+const theming = createMuiTheme(theme);
 
 function App() {
+  const classes = useStyles();
+
   return (
     <React.Fragment>
       <CssBaseline />
-      <div style={{ backgroundColor: "rgba(41, 61, 90, 0.99)" }}>
-        <MenuAppBar />
+      <div
+      // style={{ backgroundColor: "rgba(41, 61, 90, 0.99)" }}
+      // className={classes.container} this one works!
+      // style={{ backgroundColor: classes.container }}
+      >
+        {/* {console.log(classes.container)} */}
+        <ThemeProvider theme={theming}>
+          {console.log(theme)}
+          <MenuAppBar />
+        </ThemeProvider>
         {/* <TestBar /> */}
 
         <HeroBanner />

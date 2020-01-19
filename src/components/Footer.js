@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
 function Footer() {
   const classes = useStyles();
   return (
-    <React.Fragment id="footer">
+    <React.Fragment>
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
           Philosophy
