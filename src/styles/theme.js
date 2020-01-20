@@ -2,7 +2,9 @@ import { deepPurple } from "@material-ui/core/colors";
 
 const theme = {
   palette: {
-    primary: deepPurple,
+    primary: {
+      main: "rgba(41,61,90,0.99)" // or #293d5a
+    },
 
     // {
     //   light: "#757ce8",
@@ -10,7 +12,9 @@ const theme = {
     //   dark: "#002884",
     //   contrastText: "#fff"
     // },
-    secondary: deepPurple
+    secondary: {
+      main: "#64ffda"
+    }
 
     // {
     //   light: "#ff7961",

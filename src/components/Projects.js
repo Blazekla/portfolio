@@ -1,41 +1,17 @@
 import React from "react";
-// import Typography from "@material-ui/core/Typography";
-import {
-  Container,
-  // Paper,
-  // useMediaQuery,
-  Grid
-  // Card,
-  // CardMedia,
-  // CardActions,
-  // CardContent,
-  // Button
-} from "@material-ui/core";
-// import {
-//   createMuiTheme,
-//   ThemeProvider,
-//   useTheme,
-//   makeStyles
-// } from "@material-ui/styles";
-import ContentCard from "./sub_components/Cards";
-// import { green } from "@material-ui/core/colors";
 
-// import "typeface-roboto";
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     backgroundColor: "darkgreen"
-//   }
-// }));
+import { Container, Grid } from "@material-ui/core";
+
+import ContentCard from "./sub_components/Cards";
 
 const count = [1, 2, 3, 4, 5, 6];
 function Projects() {
-  // const theme = useTheme();
-  // const matches = useMediaQuery(theme.breakpoints.up("sm"));
-  // const matches = useMediaQuery("(min-width:600px)");
-  // const classes = useStyles();
   return (
     <React.Fragment>
-      <Container maxWidth="lg" style={{ backgroundColor: "inherit" }}>
+      <Container
+        maxWidth="lg"
+        // style={{ backgroundColor: "inherit" }}
+      >
         {/* Grid Section Start */}
         <Grid
           container

@@ -27,8 +27,8 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor: "rgba(41, 61, 90, 0.99)"
+    justifyContent: "space-between"
+    // backgroundColor: "rgba(41, 61, 90, 0.99)"
     // boxShadow: "none"
     // width: "inherit"
   },

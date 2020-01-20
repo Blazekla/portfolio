@@ -13,19 +13,26 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-import theme from "./styles/theme";
+// import theme from "./styles/theme";
 import {
   createMuiTheme,
   makeStyles,
   ThemeProvider
 } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(theme);
+// const useStyles = makeStyles(theme);
+
+const theme = {
+  palette: {
+    primary: { main: "#283c59", contrastText: "#ccd6f6" },
+    secondary: { main: "#64ffda", contrastText: "#000000" }
+  }
+};
 
 const theming = createMuiTheme(theme);
 
 function App() {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <React.Fragment>
@@ -37,23 +44,23 @@ function App() {
       >
         {/* {console.log(classes.container)} */}
         <ThemeProvider theme={theming}>
-          {console.log(theme)}
+          {console.log(theming)}
           <MenuAppBar />
-        </ThemeProvider>
-        {/* <TestBar /> */}
+          {/* <TestBar /> */}
 
-        <HeroBanner />
-        <Container>
-          <div>
-            <Projects />
-            {/* Add margins during design phase*/}
-            <div style={{ marginTop: "30px", backgroundColor: "red" }}>
-              {/* <About />
+          <HeroBanner />
+          <Container>
+            <div>
+              <Projects />
+              {/* Add margins during design phase*/}
+              <div style={{ marginTop: "30px", backgroundColor: "red" }}>
+                {/* <About />
               <Contact /> */}
+              </div>
             </div>
-          </div>
-        </Container>
-        <Footer />
+          </Container>
+          <Footer />
+        </ThemeProvider>
       </div>
     </React.Fragment>
   );
