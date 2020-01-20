@@ -3,32 +3,31 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { Button } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 
 function HeroUnit() {
+  const theme = useTheme();
   return (
     <React.Fragment>
       <Container
         maxWidth="md"
         style={{
-          // backgroundColor: "inherit",
+          // backgroundColor: "#283c59",
           paddingTop: "150px",
           marginBottom: "40px"
           // marginTop: "150px"
         }}
       >
-        <Typography color="textPrimary">Hi, my name is</Typography>
         <Typography
-          variant="h3"
-          // align="center"
-          color="textSecondary"
-          // style={{ backgroundColor: "orange" }}
-          // paragraph
+          // color="textPrimary"
+          style={{ color: theme.palette.primary.contrastText }}
         >
+          Hi, my name is
+        </Typography>
+        <Typography variant="h3" color="secondary" paragraph>
           Luis Cristo.
         </Typography>
-        <Typography
-        // style={{ width: "500px" }}
-        >
+        <Typography style={{ color: theme.palette.primary.contrastText }}>
           I will help you create professional and beatiful solutions for all
           your web development needs.
         </Typography>
@@ -43,12 +42,6 @@ function HeroUnit() {
               Contact
             </Button>
           </Grid>
-
-          {/* <Grid item>
-            <Button variant="outlined" color="primary">
-              Terciary call to action
-            </Button>
-          </Grid> */}
         </Grid>
       </Container>
     </React.Fragment>

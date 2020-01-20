@@ -22,10 +22,26 @@ import {
 
 // const useStyles = makeStyles(theme);
 
+import { useTheme } from "@material-ui/core/styles";
+
 const theme = {
   palette: {
     primary: { main: "#283c59", contrastText: "#ccd6f6" },
-    secondary: { main: "#64ffda", contrastText: "#000000" }
+    secondary: { main: "#64ffda", contrastText: "#000000" },
+    background: { paper: "#546686", default: "#546686" }
+
+    //Other colors to use #cee1d5, #b5a282, #e0462b
+
+    //     Color Semantics
+    // Bootstrap's UI colors contain semantic information and shouldn't be changed arbitrarily. However we can tweak them to better fit the color palette.
+
+    // Rhino	#324763	Primary
+    // Timber Green	#1c3137	Info
+    // Goblin	#449056	Success
+    // Ochre	#c2801e	Warning
+    // Pomegranate	#f44336	Danger
+
+    // background: { paper: "#283c59", default: "#fafafa" }
   }
 };
 
@@ -34,15 +50,15 @@ const theming = createMuiTheme(theme);
 function App() {
   // const classes = useStyles();
 
+  const theme = useTheme();
   return (
     <React.Fragment>
       <CssBaseline />
       <div
-      // style={{ backgroundColor: "rgba(41, 61, 90, 0.99)" }}
-      // className={classes.container} this one works!
-      // style={{ backgroundColor: classes.container }}
+        style={{ backgroundColor: "#333" }}
+
+        // className={classes.container} this one works!
       >
-        {/* {console.log(classes.container)} */}
         <ThemeProvider theme={theming}>
           {console.log(theming)}
           <MenuAppBar />
