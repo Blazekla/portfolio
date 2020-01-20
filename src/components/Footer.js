@@ -1,10 +1,17 @@
 import React from "react";
 import { Typography, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 
 function Copyright() {
+  const theme = useTheme();
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography
+      variant="body2"
+      color="textSecondary"
+      align="center"
+      style={{ color: theme.palette.primary.contrastText }}
+    >
       {"Copyright © "}
       <Link color="inherit" href="https://github.com/Blazekla/">
         Luis Cristo
@@ -17,17 +24,23 @@ function Copyright() {
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    backgroundColor: "grey",
+    backgroundColor: "#333",
     padding: theme.spacing(6)
   }
 }));
 
 function Footer() {
+  const theme = useTheme();
   const classes = useStyles();
   return (
     <React.Fragment>
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
+        <Typography
+          variant="h6"
+          align="center"
+          gutterBottom
+          style={{ color: theme.palette.primary.contrastText }}
+        >
           Philosophy
         </Typography>
         <Typography
@@ -35,6 +48,7 @@ function Footer() {
           align="center"
           color="textSecondary"
           component="p"
+          style={{ color: theme.palette.primary.contrastText }}
         >
           Live A Focused And Strenuous Life
         </Typography>
