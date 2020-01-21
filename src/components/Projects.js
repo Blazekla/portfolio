@@ -12,11 +12,12 @@ function Projects() {
         maxWidth="lg"
         style={{
           backgroundColor: theme.palette.primary.main,
-          borderRadius: "16px"
+          borderRadius: "16px",
+          margin: "0px auto 100px"
         }}
       >
         {/* Grid Section Start */}
-        <Grid container spacing={8}>
+        <Grid container spacing={8} justify="center">
           {count.map(id => (
             <Grid item key={id} xs={12} sm={6} md={4}>
               <ContentCard />

@@ -13,7 +13,7 @@ import {
 // import seal from "./sealpup.jpg";
 const useStyles = makeStyles({
   card: {
-    maxWidth: 345
+    // maxWidth: 345
   }
 });
 

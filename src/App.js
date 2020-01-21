@@ -23,12 +23,16 @@ import {
 // const useStyles = makeStyles(theme);
 
 import { useTheme } from "@material-ui/core/styles";
+import { height } from "@material-ui/system";
 
 const theme = {
   palette: {
     primary: { main: "#283c59", contrastText: "#ccd6f6" },
     secondary: { main: "#64ffda", contrastText: "#000000" },
-    background: { paper: "#546686", default: "#546686" }
+    background: {
+      // paper: "#546686",
+      // default: "#020c1b"
+    }
 
     //Other colors to use #cee1d5, #b5a282, #e0462b
 
@@ -53,31 +57,67 @@ function App() {
   const theme = useTheme();
   return (
     <React.Fragment>
-      <CssBaseline />
-      <div
-        style={{ backgroundColor: "#333" }}
-
-        // className={classes.container} this one works!
+      <ThemeProvider
+        theme={theming}
+        // style={{ backgroundColor: "#546686" }}//This doesn't work
       >
-        <ThemeProvider theme={theming}>
+        <CssBaseline
+        // style={{ backgroundColor: "#546686" }} //THis doesn't work
+        />
+        <div
+          style={{
+            backgroundColor: "#333",
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "100vh"
+          }}
+
+          // className={classes.container} this one works!
+        >
           {console.log(theming)}
           <MenuAppBar />
           {/* <TestBar /> */}
+          <div
+            className="content"
 
-          <HeroBanner />
-          <Container>
-            <div>
-              <Projects />
+            //todo:
+            //display as block?
+          >
+            <div
+              className="mainContent"
+              style={{
+                minHeight: "100vh",
+                width: "100%",
+                maxWidth: "1600px",
+                margin: "0px auto"
+              }}
+            >
+              <HeroBanner />
+
+              <Projects
+
+              //todo:
+              //text-align: center;
+              // max-width: 600px;
+              // padding: 150px 0px;
+              // margin: 0px auto 100px;
+              />
               {/* Add margins during design phase*/}
-              <div style={{ marginTop: "30px", backgroundColor: "red" }}>
-                {/* <About />
+
+              {/* <About />
               <Contact /> */}
-              </div>
             </div>
-          </Container>
-          <Footer />
-        </ThemeProvider>
-      </div>
+            <Footer
+            //todo:
+            //display:flex
+            //justify content-center
+            //alignt items: center
+            //flex direction: column
+            //padding 15px
+            />
+          </div>
+        </div>
+      </ThemeProvider>
     </React.Fragment>
   );
 }

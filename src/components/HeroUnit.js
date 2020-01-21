@@ -14,7 +14,8 @@ function HeroUnit() {
         style={{
           // backgroundColor: "#283c59",
           paddingTop: "150px",
-          marginBottom: "40px"
+          margin: "0px auto 100px"
+          // marginBottom: "40px"
           // marginTop: "150px"
         }}
       >
