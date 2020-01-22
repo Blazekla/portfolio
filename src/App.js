@@ -32,7 +32,7 @@ const theme = {
     background: {
       // paper: "#546686",
       // default: "#020c1b"
-      // default: "#333"
+      default: "#333"
     }
 
     //Other colors to use #cee1d5, #b5a282, #e0462b
