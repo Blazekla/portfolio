@@ -32,6 +32,7 @@ const theme = {
     background: {
       // paper: "#546686",
       // default: "#020c1b"
+      // default: "#333"
     }
 
     //Other colors to use #cee1d5, #b5a282, #e0462b
@@ -93,15 +94,16 @@ function App() {
               }}
             >
               <HeroBanner />
+              <Container maxWidth="md">
+                <Projects
 
-              <Projects
-
-              //todo:
-              //text-align: center;
-              // max-width: 600px;
-              // padding: 150px 0px;
-              // margin: 0px auto 100px;
-              />
+                //todo:
+                //text-align: center;
+                // max-width: 600px;
+                // padding: 150px 0px;
+                // margin: 0px auto 100px;
+                />
+              </Container>
               {/* Add margins during design phase*/}
 
               {/* <About />
