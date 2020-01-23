@@ -25,6 +25,42 @@ import {
 import { useTheme } from "@material-ui/core/styles";
 import { height } from "@material-ui/system";
 
+//this is currently not working. look more into it
+
+const useStyles = makeStyles(theme => ({
+  /* The animation code */
+  "@keyframes example ": {
+    from: {
+      // display: "none",
+      // visibility: "hidden",
+      opacity: 0,
+      top: "50px"
+      // transform: "translate(0px,50px)"
+      // backgroundColor: "red"
+    },
+    to: {
+      // display: "
+      visibility: "visible",
+      opacity: 1,
+      top: 0
+      // backgroundColor: "yellow"
+    }
+  },
+
+  container: {
+    visibility: "hidden",
+    //adding the postion to 'relative' helps to make the shift from bottom up!!
+    // position: "relative",
+    animationName: "$example",
+    animationDuration: "1.5s",
+    "animation-fill-mode": "forwards",
+    animationDelay: "1s",
+    // animationTimingFunction: "ease"
+    // transitionDelay: "3s",
+    animationTimingFunction: "cubic-bezier(0.645, 0.045, 0.355, 1)"
+  }
+}));
+
 const theme = {
   palette: {
     primary: { main: "#283c59", contrastText: "#ccd6f6" },
@@ -53,7 +89,7 @@ const theme = {
 const theming = createMuiTheme(theme);
 
 function App() {
-  // const classes = useStyles();
+  const classes = useStyles();
 
   const theme = useTheme();
   return (
@@ -76,7 +112,9 @@ function App() {
           // className={classes.container} this one works!
         >
           {console.log(theming)}
-          <MenuAppBar />
+          <div className={classes.container}>
+            <MenuAppBar />
+          </div>
           {/* <TestBar /> */}
           <div
             className="content"
