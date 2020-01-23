@@ -10,19 +10,13 @@ const useStyles = makeStyles(theme => ({
   /* The animation code */
   "@keyframes example ": {
     from: {
-      // display: "none",
-      // visibility: "hidden",
       opacity: 0,
-      top: "50px"
-      // transform: "translate(0px,50px)"
-      // backgroundColor: "red"
+      top: "20px"
     },
     to: {
-      // display: "
       visibility: "visible",
       opacity: 1,
       top: 0
-      // backgroundColor: "yellow"
     }
   },
 
@@ -31,11 +25,9 @@ const useStyles = makeStyles(theme => ({
     //adding the postion to 'relative' helps to make the shift from bottom up!!
     // position: "relative",
     animationName: "$example",
-    animationDuration: "1.5s",
+    animationDuration: "300ms",
     "animation-fill-mode": "forwards",
-    animationDelay: "1s",
-    // animationTimingFunction: "ease"
-    transitionDelay: "3s",
+    animationDelay: "30s",
     animationTimingFunction: "cubic-bezier(0.645, 0.045, 0.355, 1)"
   }
 }));
@@ -61,8 +53,15 @@ function HeroUnit() {
           margin: "0px auto 100px"
         }}
       >
-        <div className={classes.container}>
-          <Typography style={{ color: theme.palette.primary.contrastText }}>
+        <div
+          className={classes.container}
+          style={{ position: "relative", animationDelay: "100ms" }}
+        >
+          <Typography
+            style={{
+              color: theme.palette.primary.contrastText
+            }}
+          >
             Hi, my name is
           </Typography>
         </div>
@@ -71,13 +70,15 @@ function HeroUnit() {
           color="secondary"
           paragraph
           className={classes.container}
+          style={{ position: "relative", animationDelay: "200ms" }}
         >
           Luis Cristo.
         </Typography>
         <Typography
           style={{
-            color: theme.palette.primary.contrastText
-            // transitionDelay: "3s"
+            color: theme.palette.primary.contrastText,
+            position: "relative",
+            animationDelay: "300ms"
           }}
           className={classes.container}
         >
@@ -90,8 +91,13 @@ function HeroUnit() {
           justify="flex-start"
           style={{ marginTop: "20px" }}
         >
-          <Grid item className={classes.container}>
-            <Button variant="contained" color="primary">
+          <Grid item>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.container}
+              style={{ animationDelay: "400ms" }}
+            >
               Contact
             </Button>
           </Grid>
