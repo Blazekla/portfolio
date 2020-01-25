@@ -140,12 +140,13 @@ function App() {
               <Contact /> */}
             </div>
             <Footer
-            //todo:
-            //display:flex
-            //justify content-center
-            //alignt items: center
-            //flex direction: column
-            //padding 15px
+              id="howdy"
+              //todo:
+              //display:flex
+              //justify content-center
+              //alignt items: center
+              //flex direction: column
+              //padding 15px
             />
           </div>
         </div>

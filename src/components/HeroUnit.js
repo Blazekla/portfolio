@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     animationName: "$example",
     animationDuration: "300ms",
     "animation-fill-mode": "forwards",
-    animationDelay: "30s",
+    //animationDelay: "30s",/this gets overriden by inline style
     animationTimingFunction: "cubic-bezier(0.645, 0.045, 0.355, 1)"
   }
 }));
@@ -55,7 +55,7 @@ function HeroUnit() {
       >
         <div
           className={classes.container}
-          style={{ position: "relative", animationDelay: "100ms" }}
+          style={{ position: "relative", animationDelay: "2100ms" }}
         >
           <Typography
             style={{
@@ -70,7 +70,7 @@ function HeroUnit() {
           color="secondary"
           paragraph
           className={classes.container}
-          style={{ position: "relative", animationDelay: "200ms" }}
+          style={{ position: "relative", animationDelay: "2200ms" }}
         >
           Luis Cristo.
         </Typography>
@@ -78,7 +78,7 @@ function HeroUnit() {
           style={{
             color: theme.palette.primary.contrastText,
             position: "relative",
-            animationDelay: "300ms"
+            animationDelay: "2300ms"
           }}
           className={classes.container}
         >
@@ -96,7 +96,8 @@ function HeroUnit() {
               variant="contained"
               color="primary"
               className={classes.container}
-              style={{ animationDelay: "400ms" }}
+              style={{ animationDelay: "2400ms" }}
+              href="#footeridinside"
             >
               Contact
             </Button>

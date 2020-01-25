@@ -9,6 +9,7 @@ import {
   Button,
   Typography
 } from "@material-ui/core";
+import Link from "@material-ui/core/Link";
 
 // import seal from "./sealpup.jpg";
 const useStyles = makeStyles({
@@ -17,8 +18,9 @@ const useStyles = makeStyles({
   }
 });
 
-function ContentCard() {
+function ContentCard(props) {
   const classes = useStyles();
+  console.log(`This is the link passed: ${props.link}`);
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -38,7 +40,12 @@ function ContentCard() {
 
       <CardActions>
         <Button size="small" color="primary">
-          View Code
+          <Link
+            // href="https://github.com/blazekla"
+            href={props.link}
+          >
+            View Code
+          </Link>
         </Button>
         <Button size="small" color="primary">
           Case Study

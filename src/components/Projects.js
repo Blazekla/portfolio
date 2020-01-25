@@ -29,8 +29,9 @@ function Projects() {
         }}
       >
         {count.map(id => (
+          /* Adding individual content cards for now */
           <Grid item key={id} xs={12} sm={6} md={4} style={{ padding: "16px" }}>
-            <ContentCard />
+            <ContentCard link={"https://github.com/Blazekla"} />
           </Grid>
         ))}
         {/* <Grid item xs={12} sm={6} md={4}>
