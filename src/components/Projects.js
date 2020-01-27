@@ -2,12 +2,14 @@ import React from "react";
 import { Container, Grid } from "@material-ui/core";
 import ContentCard from "./sub_components/Cards";
 import { useTheme } from "@material-ui/core/styles";
+import { Transition, TransitionGroup } from "react-transition-group";
 
 const count = [1, 2, 3, 4, 5, 6];
+
 function Projects() {
   const theme = useTheme();
   return (
-    <React.Fragment>
+    <React.Fragment style={{ color: "pink", backgroundColor: "orange" }}>
       {/* <Container
         maxWidth="lg"
         style={{
@@ -22,11 +24,13 @@ function Projects() {
         direction="row"
         alignItems="flex-start"
         justify="center"
-        style={{
-          backgroundColor: theme.palette.primary.main,
-          borderRadius: "8px",
-          margin: "0px auto 100px"
-        }}
+        style={
+          {
+            // backgroundColor: theme.palette.primary.main,
+            // borderRadius: "8px",
+            // margin: "0px auto 100px",
+          }
+        }
       >
         {count.map(id => (
           /* Adding individual content cards for now */
