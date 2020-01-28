@@ -42,10 +42,10 @@ function Projects() {
       timeout={1000}
       mountOnEnter
       classNames={{
-        enter: "",
-        enterActive: "ModalOpen",
+        enter: "fadeup-enter",
+        enterActive: "fadeup-enter-active",
         exit: "",
-        exitActive: "ModalClosed"
+        exitActive: ""
       }}
     >
       <Grid
