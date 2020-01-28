@@ -27,16 +27,15 @@ function Projects() {
   //end of animation hooks//
 
   return (
-    /* <React.Fragment> */
-    /* <Container
-    //     maxWidth="lg"
-    //     style={{
-      //       backgroundColor: theme.palette.primary.main,
-      //       borderRadius: "16px",
-      //       margin: "0px auto 100px"
-      //     }}
-    //   > */
-    // {/* Grid Section Start */}
+    // <Container
+    //   maxWidth="lg"
+    //   style={{
+    //     backgroundColor: theme.palette.primary.main,
+    //     borderRadius: "16px",
+    //     margin: "0px auto 100px"
+    //   }}
+    // >
+
     <CSSTransition
       in={isMounted}
       timeout={1000}
@@ -67,11 +66,8 @@ function Projects() {
           </Grid>
         ))}
       </Grid>
-
-      {/* Grid secion End */}
     </CSSTransition>
-    /* </Container> */
-    /* </React.Fragment> */
+    // {/* </Container> */}
   );
 }
 

@@ -145,7 +145,7 @@ function MenuAppBar() {
   );
 
   return (
-    <div>
+    <React.Fragment>
       <AppBar
         position="fixed"
         // className={classes.appBar}
@@ -188,7 +188,7 @@ function MenuAppBar() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
-    </div>
+    </React.Fragment>
   );
 }
 

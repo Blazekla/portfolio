@@ -104,9 +104,9 @@ function App() {
           // className={classes.container} this one works!
         >
           {console.log(theming)}
-          <div className={classes.container}>
-            <MenuAppBar />
-          </div>
+          {/* <div className={classes.container}> */}
+          <MenuAppBar />
+          {/* </div> */}
           {/* <TestBar /> */}
           <div
             className="content"
