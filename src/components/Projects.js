@@ -1,24 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Grid } from "@material-ui/core";
 import ContentCard from "./sub_components/Cards";
 import { useTheme } from "@material-ui/core/styles";
-import { Transition, TransitionGroup } from "react-transition-group";
+import {
+  Transition,
+  TransitionGroup,
+  CSSTransition
+} from "react-transition-group";
+
+import "../styles/projects.css";
 
 const count = [1, 2, 3, 4, 5, 6];
 
 function Projects() {
   const theme = useTheme();
+  //use the following to enable the animation on first load//
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 3000);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  ////
+  ////
+  //end of animation hooks//
+
   return (
-    <React.Fragment style={{ color: "pink", backgroundColor: "orange" }}>
-      {/* <Container
-        maxWidth="lg"
-        style={{
-          backgroundColor: theme.palette.primary.main,
-          borderRadius: "16px",
-          margin: "0px auto 100px"
-        }}
-      > */}
-      {/* Grid Section Start */}
+    /* <React.Fragment> */
+    /* <Container
+    //     maxWidth="lg"
+    //     style={{
+      //       backgroundColor: theme.palette.primary.main,
+      //       borderRadius: "16px",
+      //       margin: "0px auto 100px"
+      //     }}
+    //   > */
+    // {/* Grid Section Start */}
+    <CSSTransition
+      in={isMounted}
+      timeout={1000}
+      mountOnEnter
+      classNames={{
+        enter: "",
+        enterActive: "ModalOpen",
+        exit: "",
+        exitActive: "ModalClosed"
+      }}
+    >
       <Grid
         container
         direction="row"
@@ -33,21 +62,16 @@ function Projects() {
         }
       >
         {count.map(id => (
-          /* Adding individual content cards for now */
           <Grid item key={id} xs={12} sm={6} md={4} style={{ padding: "16px" }}>
             <ContentCard link={"https://github.com/Blazekla"} />
           </Grid>
         ))}
-        {/* <Grid item xs={12} sm={6} md={4}>
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
-          </Grid> */}
       </Grid>
+
       {/* Grid secion End */}
-      {/* </Container> */}
-    </React.Fragment>
+    </CSSTransition>
+    /* </Container> */
+    /* </React.Fragment> */
   );
 }
 
