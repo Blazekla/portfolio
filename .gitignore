@@ -7,6 +7,9 @@
 
 # testing
 /coverage
+/src/TestApp.js
+/src/components/sub_components/testtransitions.css
+
 
 # production
 /build

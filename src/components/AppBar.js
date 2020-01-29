@@ -158,7 +158,7 @@ function MenuAppBar() {
     <React.Fragment>
       <CSSTransition
         in={isMounted}
-        timeout={300}
+        timeout={1000}
         mountOnEnter
         unmountOnExit
         classNames="fadedown"
@@ -173,7 +173,7 @@ function MenuAppBar() {
               <div>
                 <CSSTransition
                   in={isAlive}
-                  timeout={300}
+                  timeout={1500}
                   mountOnEnter
                   classNames="fadedown"
                 >
@@ -186,7 +186,7 @@ function MenuAppBar() {
               <div className={classes.sectionDesktop}>
                 <CSSTransition
                   in={isAlive}
-                  timeout={300}
+                  timeout={1700}
                   mountOnEnter
                   classNames="fadedown"
                 >
@@ -199,7 +199,7 @@ function MenuAppBar() {
 
                 <CSSTransition
                   in={isAlive}
-                  timeout={300}
+                  timeout={1800}
                   mountOnEnter
                   classNames="fadedown"
                 >
@@ -215,7 +215,7 @@ function MenuAppBar() {
 
                 <CSSTransition
                   in={isAlive}
-                  timeout={300}
+                  timeout={1900}
                   mountOnEnter
                   classNames="fadedown"
                 >
@@ -236,7 +236,7 @@ function MenuAppBar() {
               <div className={classes.sectionMobile}>
                 <CSSTransition
                   in={isAlive}
-                  timeout={300}
+                  timeout={1700}
                   mountOnEnter
                   classNames="fadedown"
                 >

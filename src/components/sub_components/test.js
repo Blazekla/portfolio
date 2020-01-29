@@ -1,173 +1,55 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
+import React, { useState, useEffect } from "react";
+import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import Badge from "@material-ui/core/Badge";
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
+import Grid from "@material-ui/core/Grid";
+import { Button } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
-import NotificationsIcon from "@material-ui/icons/Notifications";
-import MoreIcon from "@material-ui/icons/MoreVert";
+import { CSSTransition } from "react-transition-group";
+import "./testtransitions.css";
 
-const useStyles = makeStyles(theme => ({
-  grow: {
-    flexGrow: 1
-  },
-  title: {
-    // display: "none",
-    // [theme.breakpoints.down("sm")]: {  This part of the code is irrelevant
-    //   display: "block"
-    // }
-  },
-  sectionDesktop: {
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "flex"
-    }
-  },
-  sectionMobile: {
-    display: "flex",
-    [theme.breakpoints.up("sm")]: {
-      display: "none"
-    }
-  }
-}));
+function HeroUnit() {
+  const [isMounted, setIsMounted] = useState(false);
 
-export default function PrimarySearchAppBar() {
-  const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 2000);
+    return () => clearTimeout(timeout);
+  }, []);
 
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleProfileMenuOpen = event => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = event => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
-
-  const menuId = "primary-search-account-menu";
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
-
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={2} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
-  );
-
+  const theme = useTheme();
+  // const items = [one, two, three, four, five];
   return (
-    <div className={classes.grow}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Luis Cristo
-          </Typography>
+    <React.Fragment>
+      <CSSTransition
+        in={isMounted}
+        timeout={750}
+        mountOnEnter
+        // unmountOnExit
+        classNames={{
+          enter: "fadeup-enter",
+          enterActive: "fadeup-enter-active",
+          exit: "",
+          exitActive: ""
+        }}
+        style={{ transitionDelay: "750ms" }}
+      >
+        {/* <Typography variant="h3" style={{ transitionDelay: "100ms" }}>
+          Hi, my name is
+        </Typography> */}
+        <h1>Howdy dwag!</h1>
+      </CSSTransition>
 
-          <div
-            className={classes.grow}
-            style={{ backgroundColor: "pink" }}
-          ></div>
-          <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={20} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={40} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </div>
+      {/* <TransitionGroup component={null}>
+        {isMounted &&
+          items.map((item, i) => (
+            <CSSTransition key={i} classNames="fadeup" timeout={3000}>
+              {item}
+            </CSSTransition>
+          ))}
+      </TransitionGroup> */}
+    </React.Fragment>
   );
 }
+
+export default HeroUnit;

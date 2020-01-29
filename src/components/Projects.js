@@ -16,7 +16,7 @@ function Projects() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 5000);
+    const timeout = setTimeout(() => setIsMounted(true), 4000);
     return () => clearTimeout(timeout);
   }, []);
 

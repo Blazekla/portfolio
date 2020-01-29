@@ -39,7 +39,7 @@ function HeroUnit() {
         >
           <CSSTransition
             in={isMounted}
-            timeout={300}
+            timeout={500}
             mountOnEnter
             unmountOnExit
             classNames={{
@@ -61,7 +61,7 @@ function HeroUnit() {
 
           <CSSTransition
             in={isMounted}
-            timeout={100}
+            timeout={600}
             mountOnEnter
             unmountOnExit
             classNames="fadeup"
@@ -81,7 +81,7 @@ function HeroUnit() {
 
           <CSSTransition
             in={isMounted}
-            timeout={300}
+            timeout={700}
             mountOnEnter
             unmountOnExit
             classNames="fadeup"
@@ -105,7 +105,7 @@ function HeroUnit() {
             <Grid item>
               <CSSTransition
                 in={isMounted}
-                timeout={300}
+                timeout={900}
                 mountOnEnter
                 unmountOnExit
                 classNames="fadeup"
