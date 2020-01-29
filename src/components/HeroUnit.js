@@ -7,32 +7,8 @@ import { useTheme } from "@material-ui/core/styles";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
 import { CSSTransition } from "react-transition-group";
-// import "../styles/projects.css";
-const useStyles = makeStyles(theme => ({
-  /* The animation code */
-  "@keyframes example ": {
-    from: {
-      opacity: 0,
-      top: "20px"
-    },
-    to: {
-      visibility: "visible",
-      opacity: 1,
-      top: 0
-    }
-  },
+import "../styles/projects.css";
 
-  container: {
-    visibility: "hidden",
-    //adding the postion to 'relative' helps to make the shift from bottom up!!
-    // position: "relative",
-    animationName: "$example",
-    animationDuration: "300ms",
-    "animation-fill-mode": "forwards",
-    //animationDelay: "30s",/this gets overriden by inline style
-    animationTimingFunction: "cubic-bezier(0.645, 0.045, 0.355, 1)"
-  }
-}));
 function HeroUnit() {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -42,122 +18,118 @@ function HeroUnit() {
   }, []);
 
   const theme = useTheme();
-  const classes = useStyles();
+
   return (
     <React.Fragment>
-      {/* <Container
+      <Container
         maxWidth="md"
         style={{
-          paddingTop: "150px",
-          margin: "0px auto 100px"
-        }}
-      > */}
-      <Grid
-        container
-        direction="column"
-        justify="space-evenly"
-        // alignItems="flex-start"
-        style={{
-          paddingTop: "150px",
+          paddingTop: "100px",
           margin: "0px auto 100px"
         }}
       >
-        <CSSTransition
-          in={isMounted}
-          timeout={300}
-          mountOnEnter
-          unmountOnExit
-          classNames={{
-            enter: "fadedown-enter",
-            enterActive: "fadedown-enter-active",
-            exit: "",
-            exitActive: ""
+        <Grid
+          container
+          direction="column"
+          justify="space-evenly"
+          style={{
+            paddingTop: "150px",
+            margin: "0px auto 100px"
           }}
         >
-          <div
-            // className={classes.container}
-            style={
-              {
-                // position: "relative"
-                // transitionDelay: "1100ms"
-              }
-            }
+          <CSSTransition
+            in={isMounted}
+            timeout={300}
+            mountOnEnter
+            unmountOnExit
+            classNames={{
+              enter: "fadeup-enter",
+              enterActive: "fadeup-enter-active",
+              exit: "",
+              exitActive: ""
+            }}
           >
             <Typography
               style={{
+                transitionDelay: "200ms",
                 color: theme.palette.primary.contrastText
               }}
             >
               Hi, my name is
             </Typography>
-          </div>
-        </CSSTransition>
+          </CSSTransition>
 
-        <CSSTransition
-          in={isMounted}
-          timeout={300}
-          mountOnEnter
-          unmountOnExit
-          classNames="fade"
-        >
-          <Typography
-            variant="h3"
-            color="secondary"
-            paragraph
-            // className={classes.container}
-            style={{ position: "relative", animationDelay: "2200ms" }}
+          <CSSTransition
+            in={isMounted}
+            timeout={100}
+            mountOnEnter
+            unmountOnExit
+            classNames="fadeup"
           >
-            Luis Cristo.
-          </Typography>
-        </CSSTransition>
-
-        <CSSTransition
-          in={isMounted}
-          timeout={300}
-          mountOnEnter
-          unmountOnExit
-          classNames="fadeup"
-        >
-          <Typography
-            style={{
-              color: theme.palette.primary.contrastText,
-              position: "relative",
-              animationDelay: "9000ms"
-            }}
-            // className={classes.container}
-          >
-            I will help you create professional and beautiful solutions for all
-            your web development needs.
-          </Typography>
-        </CSSTransition>
-        <Grid
-          container
-          spacing={4}
-          justify="flex-start"
-          style={{ marginTop: "20px" }}
-        >
-          <Grid item>
-            <CSSTransition
-              in={isMounted}
-              timeout={300}
-              mountOnEnter
-              unmountOnExit
-              classNames="fadeup"
+            <Typography
+              variant="h3"
+              color="secondary"
+              paragraph
+              style={{
+                position: "relative",
+                transitionDelay: "300ms"
+              }}
             >
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.container}
-                // style={{ animationDelay: "2400ms" }}
-                href="#footeridinside"
+              Luis Cristo.
+            </Typography>
+          </CSSTransition>
+
+          <CSSTransition
+            in={isMounted}
+            timeout={300}
+            mountOnEnter
+            unmountOnExit
+            classNames="fadeup"
+          >
+            <Typography
+              style={{
+                color: theme.palette.primary.contrastText,
+                transitionDelay: "400ms"
+              }}
+            >
+              I will help you create professional and beautiful solutions for
+              all your web development needs.
+            </Typography>
+          </CSSTransition>
+          <Grid
+            container
+            spacing={4}
+            justify="flex-start"
+            style={{ marginTop: "20px" }}
+          >
+            <Grid item>
+              <CSSTransition
+                in={isMounted}
+                timeout={300}
+                mountOnEnter
+                unmountOnExit
+                classNames="fadeup"
               >
-                Contact
-              </Button>
-            </CSSTransition>
+                <div
+                  style={{
+                    transitionDelay: "600ms"
+                  }}
+                >
+                  {/* div element necessary to apply transition since Button component
+                has existing transition that conflicts */}
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    href="#footeridinside"
+                  >
+                    Contact
+                  </Button>
+                </div>
+              </CSSTransition>
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
-      {/* </Container> */}
+      </Container>
     </React.Fragment>
   );
 }

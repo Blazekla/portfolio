@@ -8,8 +8,6 @@ import {
   CSSTransition
 } from "react-transition-group";
 
-import "../styles/projects.css";
-
 const count = [1, 2, 3, 4, 5, 6];
 
 function Projects() {
@@ -18,7 +16,7 @@ function Projects() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 3000);
+    const timeout = setTimeout(() => setIsMounted(true), 5000);
     return () => clearTimeout(timeout);
   }, []);
 

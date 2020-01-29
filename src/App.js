@@ -1,6 +1,6 @@
 import React from "react";
 // import Typography from "@material-ui/core/Typography";
-// import "typeface-roboto";
+import "typeface-roboto";
 import { CssBaseline, Button } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 
@@ -12,6 +12,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import "./styles/projects.css";
 
 // import theme from "./styles/theme";
 import {
@@ -25,33 +26,33 @@ import {
 import { useTheme } from "@material-ui/core/styles";
 import { height } from "@material-ui/system";
 
-//this is currently not working. look more into it
+///Potentially remove the code below////////
+// const useStyles = makeStyles(theme => ({
+//   /* The animation code */
+//   "@keyframes example ": {
+//     from: {
+//       opacity: 0,
+//       top: "50px"
+//     },
+//     to: {
+//       visibility: "visible",
+//       opacity: 1,
+//       top: 0
+//     }
+//   },
 
-const useStyles = makeStyles(theme => ({
-  /* The animation code */
-  "@keyframes example ": {
-    from: {
-      opacity: 0,
-      top: "50px"
-    },
-    to: {
-      visibility: "visible",
-      opacity: 1,
-      top: 0
-    }
-  },
-
-  container: {
-    visibility: "hidden",
-    //adding the postion to 'relative' helps to make the shift from bottom up!!
-    // position: "relative",
-    animationName: "$example",
-    animationDuration: "1.5s",
-    "animation-fill-mode": "forwards",
-    animationDelay: "1s",
-    animationTimingFunction: "cubic-bezier(0.645, 0.045, 0.355, 1)"
-  }
-}));
+//   container: {
+//     visibility: "hidden",
+//     //adding the postion to 'relative' helps to make the shift from bottom up!!
+//     // position: "relative",
+//     animationName: "$example",
+//     animationDuration: "1.5s",
+//     "animation-fill-mode": "forwards",
+//     animationDelay: "1s",
+//     animationTimingFunction: "cubic-bezier(0.645, 0.045, 0.355, 1)"
+//   }
+// }));
+///Potentially remove the code above//////////////////////
 
 const theme = {
   palette: {
@@ -81,7 +82,7 @@ const theme = {
 const theming = createMuiTheme(theme);
 
 function App() {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const theme = useTheme();
   return (

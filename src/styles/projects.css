@@ -21,8 +21,8 @@
 .fadedown-enter-active {
   opacity: 1;
   transform: translateY(0px);
-  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
-    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 1000ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 1000ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .fade-enter {
@@ -34,20 +34,3 @@
   opacity: 1;
   transition: opacity 1000ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-
-/* Potential code example below */
-/* 
-.my-node-enter {
-    opacity: 0;
-  }
-  .my-node-enter-active {
-    opacity: 1;
-    transition: opacity 200ms;
-  }
-  .my-node-exit {
-    opacity: 1;
-  }
-  .my-node-exit-active {
-    opacity: 0;
-    transition: opacity 200ms;
-  } */
