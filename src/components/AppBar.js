@@ -72,6 +72,8 @@ function MenuAppBar() {
     return () => clearTimeout(timeout);
   }, []);
 
+  const [isAlive, setIsAlive] = useState(false);
+
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -150,15 +152,17 @@ function MenuAppBar() {
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
-
+  let next = false;
+  console.error(`initial next value: ${next}`);
   return (
     <React.Fragment>
       <CSSTransition
         in={isMounted}
-        timeout={1000}
+        timeout={300}
         mountOnEnter
         unmountOnExit
         classNames="fadedown"
+        onEntered={() => setIsAlive(true)}
       >
         <div>
           <AppBar
@@ -167,37 +171,87 @@ function MenuAppBar() {
           >
             <ToolBar className={classes.toolbarContainer}>
               <div>
-                <Button color="inherit">LC</Button>
+                <CSSTransition
+                  in={isAlive}
+                  timeout={300}
+                  mountOnEnter
+                  classNames="fadedown"
+                >
+                  <span style={{ display: "block", transitionDelay: "500ms" }}>
+                    <Button color="inherit">LC</Button>
+                  </span>
+                </CSSTransition>
               </div>
 
               <div className={classes.sectionDesktop}>
-                <IconButton aria-label="show new emails" color="inherit">
-                  <MailIcon />
-                </IconButton>
-                <IconButton aria-label="show new notifications" color="inherit">
-                  <NotificationsIcon />
-                </IconButton>
-                <IconButton
-                  aria-label="show new emails"
-                  edge="end"
-                  aria-controls={menuId}
-                  aria-haspopup="true"
-                  onClick={handleProfileMenuOpen}
-                  color="inherit"
+                <CSSTransition
+                  in={isAlive}
+                  timeout={300}
+                  mountOnEnter
+                  classNames="fadedown"
                 >
-                  <AccountCircle />
-                </IconButton>
+                  <span style={{ display: "block", transitionDelay: "700ms" }}>
+                    <IconButton aria-label="show new emails" color="inherit">
+                      <MailIcon />
+                    </IconButton>
+                  </span>
+                </CSSTransition>
+
+                <CSSTransition
+                  in={isAlive}
+                  timeout={300}
+                  mountOnEnter
+                  classNames="fadedown"
+                >
+                  <span style={{ display: "block", transitionDelay: "800ms" }}>
+                    <IconButton
+                      aria-label="show new notifications"
+                      color="inherit"
+                    >
+                      <NotificationsIcon />
+                    </IconButton>
+                  </span>
+                </CSSTransition>
+
+                <CSSTransition
+                  in={isAlive}
+                  timeout={300}
+                  mountOnEnter
+                  classNames="fadedown"
+                >
+                  <span style={{ display: "block", transitionDelay: "900ms" }}>
+                    <IconButton
+                      aria-label="show new emails"
+                      edge="end"
+                      aria-controls={menuId}
+                      aria-haspopup="true"
+                      onClick={handleProfileMenuOpen}
+                      color="inherit"
+                    >
+                      <AccountCircle />
+                    </IconButton>
+                  </span>
+                </CSSTransition>
               </div>
               <div className={classes.sectionMobile}>
-                <IconButton
-                  aria-label="show more"
-                  aria-controls={mobileMenuId}
-                  aria-haspopup="true"
-                  onClick={handleMobileMenuOpen}
-                  color="inherit"
+                <CSSTransition
+                  in={isAlive}
+                  timeout={300}
+                  mountOnEnter
+                  classNames="fadedown"
                 >
-                  <MoreIcon />
-                </IconButton>
+                  <span style={{ display: "block", transitionDelay: "700ms" }}>
+                    <IconButton
+                      aria-label="show more"
+                      aria-controls={mobileMenuId}
+                      aria-haspopup="true"
+                      onClick={handleMobileMenuOpen}
+                      color="inherit"
+                    >
+                      <MoreIcon />
+                    </IconButton>
+                  </span>
+                </CSSTransition>
               </div>
             </ToolBar>
           </AppBar>
