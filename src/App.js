@@ -4,15 +4,12 @@ import "typeface-roboto";
 import { CssBaseline, Button } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 
-import TestBar from "./components/sub_components/test";
-
 import MenuAppBar from "./components/AppBar";
 import HeroBanner from "./components/HeroUnit";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-// import "./styles/projects.css";
 
 // import theme from "./styles/theme";
 import {
