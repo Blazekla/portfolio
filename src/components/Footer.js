@@ -36,7 +36,7 @@ function Footer() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <footer id="footeridinside" className={classes.footer}>
+      <footer id="footer" className={classes.footer}>
         <Typography
           variant="h6"
           align="center"

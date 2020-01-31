@@ -152,8 +152,7 @@ function MenuAppBar() {
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
-  let next = false;
-  console.error(`initial next value: ${next}`);
+
   return (
     <React.Fragment>
       <CSSTransition

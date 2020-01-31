@@ -9,6 +9,7 @@
 /coverage
 /src/TestApp.js
 /src/components/sub_components/testtransitions.css
+/src/components/sub_components/test.js
 
 
 # production
