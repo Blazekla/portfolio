@@ -17,6 +17,7 @@ const useStyles = makeStyles({
     // maxWidth: 345
   }
 });
+//changes to animation prior to rebasing here
 
 function ContentCard(props) {
   const classes = useStyles();
