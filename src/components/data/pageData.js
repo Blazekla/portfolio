@@ -7,34 +7,46 @@ const pageData = {
   },
   project: [
     {
-      title: "ThE cUtEsT sEaL!",
-      code: "#",
-      caseStudy: "#"
+      title: "MERN Shopping List",
+      github: "https://github.com/Blazekla/MERN-Shopping-List",
+      external: "https://still-brushlands-77127.herokuapp.com/",
+      tech: "",
+      description: "#"
     },
     {
-      title: "ThE cUtEsT sEaL2!",
-      code: "#2",
-      caseStudy: "#"
+      title: "Pinterest Clone",
+      github: "https://github.com/Blazekla/pinterest-project",
+      external: "https://elastic-kirch-ad2656.netlify.com/",
+      tech: "",
+      description: "#"
     },
     {
-      title: "ThE cUtEsT sEaL3!",
-      code: "#2",
-      caseStudy: "#"
+      title: "3",
+      github: "",
+      external: "",
+      tech: "",
+      description: "#"
     },
     {
-      title: "ThE cUtEsT sEaL4!",
-      code: "#2",
-      caseStudy: "#"
+      title: "4",
+      github: "",
+      external: "",
+      tech: "",
+      description: "#"
     },
     {
-      title: "ThE cUtEsT sEaL5!",
-      code: "#2",
-      caseStudy: "#"
+      title: "5",
+      github: "",
+      external: "",
+      tech: "",
+      description: "#"
     },
     {
-      title: "ThE cUtEsT sEaL6!",
-      code: "#2",
-      caseStudy: "#"
+      title: "6",
+      github: "",
+      external: "",
+      tech: "",
+      description: "#"
     }
   ]
 };

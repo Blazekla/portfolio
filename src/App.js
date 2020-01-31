@@ -59,15 +59,18 @@ function App() {
         >
           <MenuAppBar />
           <div className="content">
-            <div
-              className="mainContent"
-              style={{
-                minHeight: "100vh",
-                width: "100%",
-                maxWidth: "1600px",
-                margin: "0px auto"
-              }}
+            {/* todo: replace div below with container component if max width md? */}
+            <Container
+              maxWidth="md"
+              // className="mainContentTest"
+              // style={{
+              //   minHeight: "100vh",
+              //   // width: "100%",
+              //   maxWidth: "1600px",
+              //   margin: "0px auto"
+              // }}
             >
+              {/* <div className="mainContent"> */}
               <HeroBanner />
               <Container maxWidth="md">
                 <Projects />
@@ -75,7 +78,8 @@ function App() {
 
               {/* <About />
               <Contact /> */}
-            </div>
+              {/* </div> */}
+            </Container>
             <Footer />
           </div>
         </div>

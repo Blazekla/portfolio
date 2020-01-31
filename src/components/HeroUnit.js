@@ -23,110 +23,111 @@ function HeroUnit() {
 
   return (
     <React.Fragment>
-      <Container
+      {/* <Container
         maxWidth="md"
         style={{
-          paddingTop: "100px",
+          // paddingTop: "100px",
           margin: "0px auto 100px"
         }}
+      > */}
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        style={{
+          padding: "200px 0 150px",
+          minHeight: "100vh"
+          // margin: "0px auto 100px"
+        }}
       >
-        <Grid
-          container
-          direction="column"
-          justify="space-evenly"
-          style={{
-            paddingTop: "150px",
-            margin: "0px auto 100px"
+        <CSSTransition
+          in={isMounted}
+          timeout={500}
+          mountOnEnter
+          unmountOnExit
+          classNames={{
+            enter: "fadeup-enter",
+            enterActive: "fadeup-enter-active",
+            exit: "",
+            exitActive: ""
           }}
         >
-          <CSSTransition
-            in={isMounted}
-            timeout={500}
-            mountOnEnter
-            unmountOnExit
-            classNames={{
-              enter: "fadeup-enter",
-              enterActive: "fadeup-enter-active",
-              exit: "",
-              exitActive: ""
+          <Typography
+            style={{
+              transitionDelay: "200ms",
+              color: theme.palette.primary.contrastText
             }}
           >
-            <Typography
-              style={{
-                transitionDelay: "200ms",
-                color: theme.palette.primary.contrastText
-              }}
-            >
-              {pageData.hero.title}
-            </Typography>
-          </CSSTransition>
+            {pageData.hero.title}
+          </Typography>
+        </CSSTransition>
 
-          <CSSTransition
-            in={isMounted}
-            timeout={600}
-            mountOnEnter
-            unmountOnExit
-            classNames="fadeup"
+        <CSSTransition
+          in={isMounted}
+          timeout={600}
+          mountOnEnter
+          unmountOnExit
+          classNames="fadeup"
+        >
+          <Typography
+            variant="h3"
+            color="secondary"
+            paragraph
+            style={{
+              position: "relative",
+              transitionDelay: "300ms"
+            }}
           >
-            <Typography
-              variant="h3"
-              color="secondary"
-              paragraph
-              style={{
-                position: "relative",
-                transitionDelay: "300ms"
-              }}
-            >
-              {pageData.hero.name}
-            </Typography>
-          </CSSTransition>
+            {pageData.hero.name}
+          </Typography>
+        </CSSTransition>
 
-          <CSSTransition
-            in={isMounted}
-            timeout={700}
-            mountOnEnter
-            unmountOnExit
-            classNames="fadeup"
+        <CSSTransition
+          in={isMounted}
+          timeout={700}
+          mountOnEnter
+          unmountOnExit
+          classNames="fadeup"
+        >
+          <Typography
+            style={{
+              color: theme.palette.primary.contrastText,
+              transitionDelay: "400ms"
+            }}
           >
-            <Typography
-              style={{
-                color: theme.palette.primary.contrastText,
-                transitionDelay: "400ms"
-              }}
+            {pageData.hero.description}
+          </Typography>
+        </CSSTransition>
+        <Grid
+          container
+          spacing={4}
+          justify="flex-start"
+          style={{ marginTop: "20px" }}
+        >
+          <Grid item>
+            <CSSTransition
+              in={isMounted}
+              timeout={900}
+              mountOnEnter
+              unmountOnExit
+              classNames="fadeup"
             >
-              {pageData.hero.description}
-            </Typography>
-          </CSSTransition>
-          <Grid
-            container
-            spacing={4}
-            justify="flex-start"
-            style={{ marginTop: "20px" }}
-          >
-            <Grid item>
-              <CSSTransition
-                in={isMounted}
-                timeout={900}
-                mountOnEnter
-                unmountOnExit
-                classNames="fadeup"
+              <div
+                style={{
+                  transitionDelay: "600ms"
+                }}
               >
-                <div
-                  style={{
-                    transitionDelay: "600ms"
-                  }}
-                >
-                  {/* div element necessary to apply transition since Button component
+                {/* div element necessary to apply transition since Button component
                 has existing transition that conflicts */}
-                  <Button variant="contained" color="primary" href="#footer">
-                    Contact
-                  </Button>
-                </div>
-              </CSSTransition>
-            </Grid>
+                <Button variant="contained" color="primary" href="#footer">
+                  Contact
+                </Button>
+              </div>
+            </CSSTransition>
           </Grid>
         </Grid>
-      </Container>
+      </Grid>
+      {/* </Container> */}
     </React.Fragment>
   );
 }

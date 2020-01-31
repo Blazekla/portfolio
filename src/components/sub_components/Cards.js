@@ -14,14 +14,14 @@ import Link from "@material-ui/core/Link";
 // import seal from "./sealpup.jpg";
 const useStyles = makeStyles({
   card: {
-    maxWidth: "345px"
+    // maxWidth: "345px" Remove since it breaks cards when width is around 550px
   }
 });
 //changes to animation prior to rebasing here
 
 function ContentCard(props) {
   const classes = useStyles();
-  console.log(`This is the link passed: ${props.link}`);
+  console.log(`This is the link passed: ${props.external}`);
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -41,10 +41,10 @@ function ContentCard(props) {
 
       <CardActions>
         <Button size="small" color="primary">
-          <Link href={props.link}>View Code</Link>
+          <Link href={props.code}>View Code</Link>
         </Button>
         <Button size="small" color="primary">
-          <Link href="#caseStudyYo">Case Study</Link>
+          <Link href={props.external}>Live Demo</Link>
         </Button>
       </CardActions>
     </Card>

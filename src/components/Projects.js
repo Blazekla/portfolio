@@ -59,20 +59,28 @@ function Projects() {
           }
         }
       >
-        {pageData.project.map(({ title, code }, id) => {
-          return (
-            <Grid
-              item
-              key={id}
-              xs={12}
-              sm={6}
-              md={4}
-              style={{ padding: "16px" }}
-            >
-              <ContentCard link={code} title={title} />
-            </Grid>
-          );
-        })}
+        {pageData.project.map(
+          ({ title, github, external, tech, description }, id) => {
+            return (
+              <Grid
+                item
+                key={id}
+                xs={12}
+                sm={6}
+                md={4}
+                style={{ padding: "16px" }}
+              >
+                <ContentCard
+                  title={title}
+                  code={github}
+                  external={external}
+                  technology={tech}
+                  desc={description}
+                />
+              </Grid>
+            );
+          }
+        )}
       </Grid>
     </CSSTransition>
     // {/* </Container> */}
