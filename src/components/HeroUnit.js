@@ -9,6 +9,8 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import { CSSTransition } from "react-transition-group";
 import "../styles/projects.css";
 
+import pageData from "./data/pageData";
+
 function HeroUnit() {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -55,7 +57,7 @@ function HeroUnit() {
                 color: theme.palette.primary.contrastText
               }}
             >
-              Hi, my name is
+              {pageData.hero.title}
             </Typography>
           </CSSTransition>
 
@@ -75,7 +77,7 @@ function HeroUnit() {
                 transitionDelay: "300ms"
               }}
             >
-              Luis Cristo.
+              {pageData.hero.name}
             </Typography>
           </CSSTransition>
 
@@ -92,8 +94,7 @@ function HeroUnit() {
                 transitionDelay: "400ms"
               }}
             >
-              I will help you create professional and beautiful solutions for
-              all your web development needs.
+              {pageData.hero.description}
             </Typography>
           </CSSTransition>
           <Grid
@@ -117,11 +118,7 @@ function HeroUnit() {
                 >
                   {/* div element necessary to apply transition since Button component
                 has existing transition that conflicts */}
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    href="#footeridinside"
-                  >
+                  <Button variant="contained" color="primary" href="#footer">
                     Contact
                   </Button>
                 </div>

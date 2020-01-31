@@ -7,6 +7,7 @@ import {
   TransitionGroup,
   CSSTransition
 } from "react-transition-group";
+import pageData from "./data/pageData";
 
 const count = [1, 2, 3, 4, 5, 6];
 
@@ -58,11 +59,20 @@ function Projects() {
           }
         }
       >
-        {count.map(id => (
-          <Grid item key={id} xs={12} sm={6} md={4} style={{ padding: "16px" }}>
-            <ContentCard link={"https://github.com/Blazekla"} />
-          </Grid>
-        ))}
+        {pageData.project.map(({ title, code }, id) => {
+          return (
+            <Grid
+              item
+              key={id}
+              xs={12}
+              sm={6}
+              md={4}
+              style={{ padding: "16px" }}
+            >
+              <ContentCard link={code} title={title} />
+            </Grid>
+          );
+        })}
       </Grid>
     </CSSTransition>
     // {/* </Container> */}

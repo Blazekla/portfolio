@@ -14,7 +14,7 @@ import Link from "@material-ui/core/Link";
 // import seal from "./sealpup.jpg";
 const useStyles = makeStyles({
   card: {
-    // maxWidth: 345
+    maxWidth: "345px"
   }
 });
 
@@ -34,21 +34,16 @@ function ContentCard(props) {
           title="Photogenic Seal Pup"
         />
         <CardContent>
-          <Typography>This is the cutest seal pup</Typography>
+          <Typography>{props.title}</Typography>
         </CardContent>
       </CardActionArea>
 
       <CardActions>
         <Button size="small" color="primary">
-          <Link
-            // href="https://github.com/blazekla"
-            href={props.link}
-          >
-            View Code
-          </Link>
+          <Link href={props.link}>View Code</Link>
         </Button>
         <Button size="small" color="primary">
-          Case Study
+          <Link href="#caseStudyYo">Case Study</Link>
         </Button>
       </CardActions>
     </Card>
