@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { Button } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import {
-  createMuiTheme,
-  responsiveFontSizes,
-  ThemeProvider
-} from "@material-ui/core/styles";
 
 import { CSSTransition } from "react-transition-group";
-import "../styles/projects.css";
 
 import pageData from "./data/pageData";
+import "../styles/projects.css";
 
 function HeroUnit() {
   const [isMounted, setIsMounted] = useState(false);
@@ -26,29 +19,15 @@ function HeroUnit() {
 
   const theme = useTheme();
 
-  /////using responsive fonts code below
-  // let respFont = createMuiTheme();
-  // respFont = responsiveFontSizes(respFont);
-  /////
-
   return (
     <React.Fragment>
-      {/* <Container
-        maxWidth="md"
-        style={{
-          // paddingTop: "100px",
-          margin: "0px auto 100px"
-        }}
-      > */}
-
       <Grid
         container
         direction="column"
         justify="center"
         style={{
-          padding: "150px 0 150px",
+          // padding: "105px 0 100px",
           minHeight: "100vh"
-          // margin: "0px auto 100px"
         }}
       >
         <CSSTransition
@@ -67,7 +46,8 @@ function HeroUnit() {
             variant="h6"
             style={{
               transitionDelay: "200ms",
-              color: theme.palette.primary.contrastText
+              color: theme.palette.primary.contrastText,
+              marginBottom: "20px"
             }}
           >
             {pageData.hero.title}
@@ -85,8 +65,8 @@ function HeroUnit() {
             variant="h1"
             color="secondary"
             style={{
-              // position: "relative",
-              transitionDelay: "300ms"
+              transitionDelay: "300ms",
+              marginBottom: "10px"
             }}
           >
             {pageData.hero.name}
@@ -101,10 +81,11 @@ function HeroUnit() {
           classNames="fadeup"
         >
           <Typography
-            variant="h4"
+            variant="h5"
             style={{
               color: theme.palette.primary.contrastText,
-              transitionDelay: "400ms"
+              transitionDelay: "400ms",
+              marginTop: "25px"
             }}
           >
             {pageData.hero.description}
@@ -126,20 +107,25 @@ function HeroUnit() {
             >
               <div
                 style={{
-                  transitionDelay: "600ms"
+                  transitionDelay: "600ms",
+                  marginTop: "30px"
                 }}
               >
                 {/* div element necessary to apply transition since Button component
                 has existing transition that conflicts */}
-                <Button variant="contained" color="primary" href="#footer">
-                  Contact
+                <Button
+                  variant="contained"
+                  color="primary"
+                  href="#footer"
+                  style={{ padding: "20px 28px" }}
+                >
+                  Get In Touch
                 </Button>
               </div>
             </CSSTransition>
           </Grid>
         </Grid>
       </Grid>
-      {/* </Container> */}
     </React.Fragment>
   );
 }

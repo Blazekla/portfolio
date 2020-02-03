@@ -1,7 +1,7 @@
 import React from "react";
-// import Typography from "@material-ui/core/Typography";
+
 import "typeface-roboto";
-import { CssBaseline, Button } from "@material-ui/core";
+import { CssBaseline } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 
 import MenuAppBar from "./components/AppBar";
@@ -19,7 +19,6 @@ import {
 } from "@material-ui/core/styles";
 
 import { useTheme } from "@material-ui/core/styles";
-import { height } from "@material-ui/system";
 
 const theme = {
   palette: {
@@ -46,8 +45,10 @@ const theme = {
   }
 };
 
+//Code below enables responsive font sizes
 let theming = createMuiTheme(theme);
 theming = responsiveFontSizes(theming);
+////
 
 function App() {
   return (
@@ -64,18 +65,7 @@ function App() {
         >
           <MenuAppBar />
           <div className="content">
-            {/* todo: replace div below with container component if max width md? */}
-            <Container
-              maxWidth="md"
-              // className="mainContentTest"
-              // style={{
-              //   minHeight: "100vh",
-              //   // width: "100%",
-              //   maxWidth: "1600px",
-              //   margin: "0px auto"
-              // }}
-            >
-              {/* <div className="mainContent"> */}
+            <Container maxWidth="md" className="mainContent">
               <HeroBanner />
               <Container maxWidth="md">
                 <Projects />
@@ -83,7 +73,6 @@ function App() {
 
               {/* <About />
               <Contact /> */}
-              {/* </div> */}
             </Container>
             <Footer />
           </div>
