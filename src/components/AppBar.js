@@ -76,31 +76,20 @@ function MenuAppBar() {
   const [isAlive, setIsAlive] = useState(false);
 
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
+
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-  const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleProfileMenuOpen = event => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
   };
 
   const handleMobileMenuOpen = event => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const mobileMenuId = "howdy";
-  // "primary-search-account-menu-mobile";
+  const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
@@ -110,9 +99,8 @@ function MenuAppBar() {
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
-      // style={{ backgroundColor: "pink" }}
     >
-      <MenuItem>
+      <MenuItem onClick={handleMobileMenuClose}>
         <IconButton
           aria-label="Show Projects"
           color="secondary"
@@ -121,7 +109,7 @@ function MenuAppBar() {
           <Typography>1. Projects</Typography>
         </IconButton>
       </MenuItem>
-      <MenuItem>
+      <MenuItem onClick={handleMobileMenuClose}>
         <IconButton
           aria-label="Show About section"
           color="secondary"
@@ -130,7 +118,7 @@ function MenuAppBar() {
           <Typography>2. About</Typography>
         </IconButton>
       </MenuItem>
-      <MenuItem>
+      <MenuItem onClick={handleMobileMenuClose}>
         <IconButton
           aria-label="Show Contact section"
           color="secondary"
@@ -234,7 +222,6 @@ function MenuAppBar() {
                   >
                     <IconButton
                       aria-label="Show Contact section"
-                      edge="end"
                       color="inherit"
                       href="#contact"
                     >
