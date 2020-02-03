@@ -25,7 +25,7 @@ const theme = {
     primary: { main: "#283c59", contrastText: "#ccd6f6" },
     secondary: { main: "#64ffda", contrastText: "#000000" },
     background: {
-      // paper: "#546686",
+      paper: "#546686",
       // default: "#020c1b"
       default: "#333"
     }

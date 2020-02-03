@@ -111,46 +111,32 @@ function MenuAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <MailIcon />
+        <IconButton
+          aria-label="Show Projects"
+          color="secondary"
+          href="#projects"
+        >
+          <Typography>1. Projects</Typography>
         </IconButton>
-        <p>Messages</p>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <NotificationsIcon />
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
+          aria-label="Show About section"
+          color="secondary"
+          href="#about"
         >
-          <AccountCircle />
+          <Typography>2. About</Typography>
         </IconButton>
-        <p>Profile</p>
       </MenuItem>
-    </Menu>
-  );
-
-  const menuId = "primary-search-account-menu";
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose} color="inherit">
-        Profile
+      <MenuItem>
+        <IconButton
+          aria-label="Show Contact section"
+          color="secondary"
+          href="#contact"
+        >
+          <Typography>3. Contact</Typography>
+        </IconButton>
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
 
@@ -177,7 +163,12 @@ function MenuAppBar() {
                   mountOnEnter
                   classNames="fadedown"
                 >
-                  <span style={{ display: "block", transitionDelay: "500ms" }}>
+                  <span
+                    style={{
+                      display: "block",
+                      transitionDelay: "500ms"
+                    }}
+                  >
                     <Button color="inherit" href="/">
                       <Typography>LC</Typography>
                     </Button>
@@ -192,14 +183,17 @@ function MenuAppBar() {
                   mountOnEnter
                   classNames="fadedown"
                 >
-                  <span style={{ display: "block", transitionDelay: "700ms" }}>
+                  <span
+                    style={{
+                      transitionDelay: "700ms"
+                    }}
+                  >
                     <IconButton
-                      aria-label="show new emails"
+                      aria-label="Show Projects section"
                       color="inherit"
                       href="#projects"
                     >
-                      {/* <MailIcon /> */}
-                      <Typography>Projects</Typography>
+                      <Typography>1. Projects</Typography>
                     </IconButton>
                   </span>
                 </CSSTransition>
@@ -210,14 +204,17 @@ function MenuAppBar() {
                   mountOnEnter
                   classNames="fadedown"
                 >
-                  <span style={{ display: "block", transitionDelay: "800ms" }}>
+                  <span
+                    style={{
+                      transitionDelay: "800ms"
+                    }}
+                  >
                     <IconButton
-                      aria-label="show new notifications"
+                      aria-label="Show About section"
                       color="inherit"
                       href="#about"
                     >
-                      {/* <NotificationsIcon /> */}
-                      <Typography>About</Typography>
+                      <Typography>2. About</Typography>
                     </IconButton>
                   </span>
                 </CSSTransition>
@@ -228,18 +225,18 @@ function MenuAppBar() {
                   mountOnEnter
                   classNames="fadedown"
                 >
-                  <span style={{ display: "block", transitionDelay: "900ms" }}>
+                  <span
+                    style={{
+                      transitionDelay: "900ms"
+                    }}
+                  >
                     <IconButton
-                      aria-label="show new emails"
+                      aria-label="Show Contact section"
                       edge="end"
-                      aria-controls={menuId}
-                      aria-haspopup="true"
-                      onClick={handleProfileMenuOpen}
                       color="inherit"
                       href="#contact"
                     >
-                      {/* <AccountCircle/> */}
-                      <Typography>Contact</Typography>
+                      <Typography>3. Contact</Typography>
                     </IconButton>
                   </span>
                 </CSSTransition>
@@ -251,7 +248,11 @@ function MenuAppBar() {
                   mountOnEnter
                   classNames="fadedown"
                 >
-                  <span style={{ display: "block", transitionDelay: "700ms" }}>
+                  <span
+                    style={{
+                      transitionDelay: "700ms"
+                    }}
+                  >
                     <IconButton
                       aria-label="show more"
                       aria-controls={mobileMenuId}
@@ -269,7 +270,6 @@ function MenuAppBar() {
         </div>
       </CSSTransition>
       {renderMobileMenu}
-      {renderMenu}
     </React.Fragment>
   );
 }
