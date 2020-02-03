@@ -35,6 +35,7 @@ function Projects() {
     >
       <Grid
         container
+        // id="projects"
         direction="row"
         alignItems="flex-start"
         justify="center"
@@ -42,6 +43,7 @@ function Projects() {
           backgroundColor: theme.palette.primary.main,
           borderRadius: "8px",
           margin: "0px auto 100px"
+          // paddingTop: "70px"
         }}
       >
         {pageData.project.map(

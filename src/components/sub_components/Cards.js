@@ -21,7 +21,6 @@ const useStyles = makeStyles({
 
 function ContentCard(props) {
   const classes = useStyles();
-  console.log(`This is the link passed: ${props.external}`);
   return (
     <Card className={classes.card}>
       <CardActionArea>

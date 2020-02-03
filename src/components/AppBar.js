@@ -6,6 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 import { CSSTransition } from "react-transition-group";
 
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -177,7 +178,9 @@ function MenuAppBar() {
                   classNames="fadedown"
                 >
                   <span style={{ display: "block", transitionDelay: "500ms" }}>
-                    <Button color="inherit">LC</Button>
+                    <Button color="inherit" href="/">
+                      <Typography>LC</Typography>
+                    </Button>
                   </span>
                 </CSSTransition>
               </div>
@@ -190,8 +193,13 @@ function MenuAppBar() {
                   classNames="fadedown"
                 >
                   <span style={{ display: "block", transitionDelay: "700ms" }}>
-                    <IconButton aria-label="show new emails" color="inherit">
-                      <MailIcon />
+                    <IconButton
+                      aria-label="show new emails"
+                      color="inherit"
+                      href="#projects"
+                    >
+                      {/* <MailIcon /> */}
+                      <Typography>Projects</Typography>
                     </IconButton>
                   </span>
                 </CSSTransition>
@@ -206,8 +214,10 @@ function MenuAppBar() {
                     <IconButton
                       aria-label="show new notifications"
                       color="inherit"
+                      href="#about"
                     >
-                      <NotificationsIcon />
+                      {/* <NotificationsIcon /> */}
+                      <Typography>About</Typography>
                     </IconButton>
                   </span>
                 </CSSTransition>
@@ -226,8 +236,10 @@ function MenuAppBar() {
                       aria-haspopup="true"
                       onClick={handleProfileMenuOpen}
                       color="inherit"
+                      href="#contact"
                     >
-                      <AccountCircle />
+                      {/* <AccountCircle/> */}
+                      <Typography>Contact</Typography>
                     </IconButton>
                   </span>
                 </CSSTransition>

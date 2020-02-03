@@ -67,7 +67,11 @@ function App() {
           <div className="content">
             <Container maxWidth="md" className="mainContent">
               <HeroBanner />
-              <Container maxWidth="md">
+              <Container
+                id="projects"
+                maxWidth="md"
+                style={{ paddingTop: "70px" }}
+              >
                 <Projects />
               </Container>
 
