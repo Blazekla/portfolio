@@ -17,7 +17,6 @@ const useStyles = makeStyles({
     // maxWidth: "345px" Remove since it breaks cards when width is around 550px
   }
 });
-//changes to animation prior to rebasing here
 
 function ContentCard(props) {
   const classes = useStyles();
@@ -34,16 +33,20 @@ function ContentCard(props) {
           title="Photogenic Seal Pup"
         />
         <CardContent>
-          <Typography>{props.title}</Typography>
+          <Typography color="secondary">{props.title}</Typography>
         </CardContent>
       </CardActionArea>
 
       <CardActions>
         <Button size="small" color="primary">
-          <Link href={props.code}>View Code</Link>
+          <Link color="textPrimary" href={props.code}>
+            View Code
+          </Link>
         </Button>
         <Button size="small" color="primary">
-          <Link href={props.external}>Live Demo</Link>
+          <Link color="textSecondary" href={props.external}>
+            Live Demo
+          </Link>
         </Button>
       </CardActions>
     </Card>

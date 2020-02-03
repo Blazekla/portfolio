@@ -99,7 +99,8 @@ function MenuAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const mobileMenuId = "primary-search-account-menu-mobile";
+  const mobileMenuId = "howdy";
+  // "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
@@ -109,6 +110,7 @@ function MenuAppBar() {
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
+      // style={{ backgroundColor: "pink" }}
     >
       <MenuItem>
         <IconButton
