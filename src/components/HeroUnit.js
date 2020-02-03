@@ -5,6 +5,11 @@ import Grid from "@material-ui/core/Grid";
 import { Button } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import {
+  createMuiTheme,
+  responsiveFontSizes,
+  ThemeProvider
+} from "@material-ui/core/styles";
 
 import { CSSTransition } from "react-transition-group";
 import "../styles/projects.css";
@@ -21,6 +26,11 @@ function HeroUnit() {
 
   const theme = useTheme();
 
+  /////using responsive fonts code below
+  // let respFont = createMuiTheme();
+  // respFont = responsiveFontSizes(respFont);
+  /////
+
   return (
     <React.Fragment>
       {/* <Container
@@ -30,12 +40,13 @@ function HeroUnit() {
           margin: "0px auto 100px"
         }}
       > */}
+
       <Grid
         container
         direction="column"
         justify="center"
         style={{
-          padding: "200px 0 150px",
+          padding: "150px 0 150px",
           minHeight: "100vh"
           // margin: "0px auto 100px"
         }}
@@ -53,6 +64,7 @@ function HeroUnit() {
           }}
         >
           <Typography
+            variant="h6"
             style={{
               transitionDelay: "200ms",
               color: theme.palette.primary.contrastText
@@ -70,11 +82,10 @@ function HeroUnit() {
           classNames="fadeup"
         >
           <Typography
-            variant="h3"
+            variant="h1"
             color="secondary"
-            paragraph
             style={{
-              position: "relative",
+              // position: "relative",
               transitionDelay: "300ms"
             }}
           >
@@ -90,6 +101,7 @@ function HeroUnit() {
           classNames="fadeup"
         >
           <Typography
+            variant="h4"
             style={{
               color: theme.palette.primary.contrastText,
               transitionDelay: "400ms"

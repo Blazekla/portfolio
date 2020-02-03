@@ -12,7 +12,11 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 // import theme from "./styles/theme";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import {
+  createMuiTheme,
+  ThemeProvider,
+  responsiveFontSizes
+} from "@material-ui/core/styles";
 
 import { useTheme } from "@material-ui/core/styles";
 import { height } from "@material-ui/system";
@@ -42,7 +46,8 @@ const theme = {
   }
 };
 
-const theming = createMuiTheme(theme);
+let theming = createMuiTheme(theme);
+theming = responsiveFontSizes(theming);
 
 function App() {
   return (
