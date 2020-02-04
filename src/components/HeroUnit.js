@@ -27,7 +27,6 @@ function HeroUnit() {
         direction="column"
         justify="center"
         style={{
-          // padding: "105px 0 100px",
           minHeight: "100vh"
         }}
       >
