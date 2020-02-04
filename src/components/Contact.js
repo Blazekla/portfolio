@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Typography from "@material-ui/core/Typography";
 import { useTheme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import { CSSTransition } from "react-transition-group";
 
 function Contact() {
+  ////Hooks to enable animation
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 4500);
+    return () => clearTimeout(timeout);
+  }, []);
+  ////End of animation hooks
+
   const theme = useTheme();
+  const color = theme.palette.primary.contrastText;
   return (
-    <React.Fragment>
+    <CSSTransition
+      in={isMounted}
+      timeout={300}
+      mountOnEnter
+      classNames="fadeup"
+    >
       <div
         id="contact"
         style={{
@@ -22,11 +38,7 @@ function Contact() {
         >
           Contact
         </Typography>
-        <Typography
-          style={{ marginTop: "20px" }}
-          paragraph
-          style={{ color: theme.palette.primary.contrastText }}
-        >
+        <Typography paragraph style={{ marginTop: "20px", color: color }}>
           I'm excited to work with you. Looking forward to hearing from you!
         </Typography>
 
@@ -39,7 +51,7 @@ function Contact() {
           Say Hello
         </Button>
       </div>
-    </React.Fragment>
+    </CSSTransition>
   );
 }
 

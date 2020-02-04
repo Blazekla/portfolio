@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import ContentCard from "./sub_components/Cards";
-import { useTheme } from "@material-ui/core/styles";
-import {
-  // Transition,
-  // TransitionGroup,
-  CSSTransition
-} from "react-transition-group";
+
+import { CSSTransition } from "react-transition-group";
 import pageData from "./data/pageData";
 
 function Projects() {
-  const theme = useTheme();
-
   //use the following to enable the animation on first load//
   const [isMounted, setIsMounted] = useState(false);
 

@@ -3,7 +3,6 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { Button } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
-import Link from "@material-ui/core/Link";
 
 import { CSSTransition } from "react-transition-group";
 

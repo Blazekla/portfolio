@@ -38,7 +38,7 @@ function Footer() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 4500);
+    const timeout = setTimeout(() => setIsMounted(true), 4750);
     return () => clearTimeout(timeout);
   }, []);
   /////
@@ -49,7 +49,7 @@ function Footer() {
     <React.Fragment>
       <CSSTransition
         in={isMounted}
-        timeout={3000}
+        timeout={300}
         mountOnEnter
         classNames="fadeup"
       >
