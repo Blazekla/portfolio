@@ -9,6 +9,8 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { CSSTransition } from "react-transition-group";
 
+import Drawer from "./Drawer";
+
 import MoreIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles(theme => ({
@@ -56,7 +58,6 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexWrap: "nowrap",
     backgroundColor: "transparent"
-    // flex: "1"
   },
   button: {
     flex: 1
@@ -88,43 +89,44 @@ function MenuAppBar() {
 
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem onClick={handleMobileMenuClose}>
-        <IconButton
-          aria-label="Show Projects"
-          color="secondary"
-          href="#projects"
-        >
-          <Typography>1. Projects</Typography>
-        </IconButton>
-      </MenuItem>
-      <MenuItem onClick={handleMobileMenuClose}>
-        <IconButton
-          aria-label="Show About section"
-          color="secondary"
-          href="#about"
-        >
-          <Typography>2. About</Typography>
-        </IconButton>
-      </MenuItem>
-      <MenuItem onClick={handleMobileMenuClose}>
-        <IconButton
-          aria-label="Show Contact section"
-          color="secondary"
-          href="#contact"
-        >
-          <Typography>3. Contact</Typography>
-        </IconButton>
-      </MenuItem>
-    </Menu>
+    // <Menu
+    //   anchorEl={mobileMoreAnchorEl}
+    //   anchorOrigin={{ vertical: "top", horizontal: "right" }}
+    //   id={mobileMenuId}
+    //   keepMounted
+    //   transformOrigin={{ vertical: "top", horizontal: "right" }}
+    //   open={isMobileMenuOpen}
+    //   onClose={handleMobileMenuClose}
+    // >
+    //   <MenuItem onClick={handleMobileMenuClose}>
+    //     <IconButton
+    //       aria-label="Show Projects"
+    //       color="secondary"
+    //       href="#projects"
+    //     >
+    //       <Typography>1. Projects</Typography>
+    //     </IconButton>
+    //   </MenuItem>
+    //   <MenuItem onClick={handleMobileMenuClose}>
+    //     <IconButton
+    //       aria-label="Show About section"
+    //       color="secondary"
+    //       href="#about"
+    //     >
+    //       <Typography>2. About</Typography>
+    //     </IconButton>
+    //   </MenuItem>
+    //   <MenuItem onClick={handleMobileMenuClose}>
+    //     <IconButton
+    //       aria-label="Show Contact section"
+    //       color="secondary"
+    //       href="#contact"
+    //     >
+    //       <Typography>3. Contact</Typography>
+    //     </IconButton>
+    //   </MenuItem>
+    // </Menu>
+    <Drawer />
   );
 
   return (
@@ -239,7 +241,7 @@ function MenuAppBar() {
                       transitionDelay: "700ms"
                     }}
                   >
-                    <IconButton
+                    {/* <IconButton
                       aria-label="show more"
                       aria-controls={mobileMenuId}
                       aria-haspopup="true"
@@ -247,7 +249,8 @@ function MenuAppBar() {
                       color="inherit"
                     >
                       <MoreIcon />
-                    </IconButton>
+                    </IconButton> */}
+                    <Drawer />
                   </span>
                 </CSSTransition>
               </div>
