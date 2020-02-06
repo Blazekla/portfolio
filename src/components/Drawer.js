@@ -48,7 +48,7 @@ export default function TemporaryDrawer() {
     >
       <List>
         {["Projects", "About", "Contact"].map((text, index) => (
-          <ListItem button key={text} href="#contact">
+          <ListItem button component="a" key={text} href="#contact">
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
