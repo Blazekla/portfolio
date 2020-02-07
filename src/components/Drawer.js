@@ -33,11 +33,12 @@ const useStyles = makeStyles({
   icon: {
     flex: "1 1 50%",
     minWidth: "30px",
-    justifyContent: "center"
+    justifyContent: "flex-end",
+    paddingRight: "5px"
   }
 });
 
-export default function TemporaryDrawer() {
+export default function SideDrawer() {
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
