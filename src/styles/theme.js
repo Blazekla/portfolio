@@ -6,6 +6,9 @@ const theme = {
       paper: "#546686",
       // default: "#020c1b"
       default: "#333"
+    },
+    text: {
+      secondary: "#64ffda"
     }
   }
   //Other colors to use #cee1d5, #b5a282, #e0462b

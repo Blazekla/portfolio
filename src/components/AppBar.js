@@ -75,60 +75,6 @@ function MenuAppBar() {
 
   const classes = useStyles();
 
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMobileMenuOpen = event => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
-
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    // <Menu
-    //   anchorEl={mobileMoreAnchorEl}
-    //   anchorOrigin={{ vertical: "top", horizontal: "right" }}
-    //   id={mobileMenuId}
-    //   keepMounted
-    //   transformOrigin={{ vertical: "top", horizontal: "right" }}
-    //   open={isMobileMenuOpen}
-    //   onClose={handleMobileMenuClose}
-    // >
-    //   <MenuItem onClick={handleMobileMenuClose}>
-    //     <IconButton
-    //       aria-label="Show Projects"
-    //       color="secondary"
-    //       href="#projects"
-    //     >
-    //       <Typography>1. Projects</Typography>
-    //     </IconButton>
-    //   </MenuItem>
-    //   <MenuItem onClick={handleMobileMenuClose}>
-    //     <IconButton
-    //       aria-label="Show About section"
-    //       color="secondary"
-    //       href="#about"
-    //     >
-    //       <Typography>2. About</Typography>
-    //     </IconButton>
-    //   </MenuItem>
-    //   <MenuItem onClick={handleMobileMenuClose}>
-    //     <IconButton
-    //       aria-label="Show Contact section"
-    //       color="secondary"
-    //       href="#contact"
-    //     >
-    //       <Typography>3. Contact</Typography>
-    //     </IconButton>
-    //   </MenuItem>
-    // </Menu>
-    <Drawer />
-  );
-
   return (
     <React.Fragment>
       <CSSTransition
@@ -241,15 +187,6 @@ function MenuAppBar() {
                       transitionDelay: "700ms"
                     }}
                   >
-                    {/* <IconButton
-                      aria-label="show more"
-                      aria-controls={mobileMenuId}
-                      aria-haspopup="true"
-                      onClick={handleMobileMenuOpen}
-                      color="inherit"
-                    >
-                      <MoreIcon />
-                    </IconButton> */}
                     <Drawer />
                   </span>
                 </CSSTransition>
@@ -258,7 +195,6 @@ function MenuAppBar() {
           </AppBar>
         </div>
       </CSSTransition>
-      {renderMobileMenu}
     </React.Fragment>
   );
 }
