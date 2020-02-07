@@ -63,7 +63,6 @@ export default function SideDrawer() {
       className={classes.list}
       role="presentation"
       onClick={toggleDrawer(side, false)}
-      // onKeyDown={toggleDrawer(side, false)}
     >
       <List>
         <ListItem
@@ -94,7 +93,6 @@ export default function SideDrawer() {
           component="a"
           href="#contact"
           classes={{ root: classes.listItem }}
-          // style={{ justifyContent: "center" }}
         >
           <ListItemIcon classes={{ root: classes.icon }}>
             <EmailIcon color="secondary" />
@@ -118,7 +116,6 @@ export default function SideDrawer() {
         // className={classes.root}
         classes={{ paper: classes.root }}
       >
-        {console.log(classes.root)}
         {sideList("right")}
       </Drawer>
     </div>
