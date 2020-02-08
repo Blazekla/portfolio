@@ -39,12 +39,12 @@ function ContentCard(props) {
 
       <CardActions>
         <Button size="small" color="primary">
-          <Link color="textPrimary" href={props.code}>
+          <Link color="textPrimary" href={props.code} target="_blank">
             View Code
           </Link>
         </Button>
         <Button size="small" color="primary">
-          <Link color="textSecondary" href={props.external}>
+          <Link color="textSecondary" href={props.external} target="_blank">
             Live Demo
           </Link>
         </Button>
