@@ -14,7 +14,10 @@ import Link from "@material-ui/core/Link";
 // import seal from "./sealpup.jpg";
 const useStyles = makeStyles({
   card: {
-    // maxWidth: "345px" Remove since it breaks cards when width is around 550px
+    transition: "all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)",
+    "&:hover": {
+      transform: "translateY(-10px)"
+    }
   }
 });
 
