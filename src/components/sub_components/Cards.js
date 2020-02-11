@@ -16,7 +16,7 @@ const useStyles = makeStyles({
   card: {
     transition: "all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)",
     "&:hover": {
-      transform: "translateY(-10px)"
+      transform: "translateY(-5px)"
     }
   }
 });
@@ -29,10 +29,7 @@ function ContentCard(props) {
         <CardMedia
           component="img"
           alt="Waving photogenic seal"
-          // height="200"
-          //   image="https://source.unsplash.com/random" this works online
-          //   image={seal} this only works went you import the image above
-          image="./sealpup.jpg" //This works since the image was moved to the public folder
+          image="./sealpup.jpg"
           title="Photogenic Seal Pup"
         />
         <CardContent>
