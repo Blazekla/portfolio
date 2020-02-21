@@ -19,35 +19,35 @@ const pageData = {
       external: "https://elastic-kirch-ad2656.netlify.com/",
       tech: "",
       description: "#"
-    },
-    {
-      title: "3",
-      github: "",
-      external: "",
-      tech: "",
-      description: "#"
-    },
-    {
-      title: "4",
-      github: "",
-      external: "",
-      tech: "",
-      description: "#"
-    },
-    {
-      title: "5",
-      github: "",
-      external: "",
-      tech: "",
-      description: "#"
-    },
-    {
-      title: "6",
-      github: "",
-      external: "",
-      tech: "",
-      description: "#"
     }
+    // {
+    //   title: "3",
+    //   github: "",
+    //   external: "",
+    //   tech: "",
+    //   description: "#"
+    // },
+    // {
+    //   title: "4",
+    //   github: "",
+    //   external: "",
+    //   tech: "",
+    //   description: "#"
+    // },
+    // {
+    //   title: "5",
+    //   github: "",
+    //   external: "",
+    //   tech: "",
+    //   description: "#"
+    // },
+    // {
+    //   title: "6",
+    //   github: "",
+    //   external: "",
+    //   tech: "",
+    //   description: "#"
+    // }
   ]
 };
 

@@ -30,7 +30,7 @@ function ContentCard(props) {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
-      <CardActionArea>
+      <CardActionArea disableRipple={true}>
         <CardMedia
           component="img"
           alt="Waving photogenic seal"

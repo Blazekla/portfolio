@@ -10,6 +10,38 @@ const theme = {
     text: {
       secondary: "#64ffda"
     }
+    // action: {
+    //   hoverOpacity: 0.4
+    // }
+  },
+
+  props: {
+    // MuiButtonBase: {
+    //   // disableRipple: true,
+    // },
+  },
+  overrides: {
+    MuiButton: {
+      textPrimary: {
+        "&:hover": {
+          backgroundColor: "rgba(0, 0, 0, 0)"
+        }
+      }
+    },
+    MuiButton: {
+      root: {
+        "&:hover": {
+          backgroundColor: "rgba(0, 0, 0, 0)"
+        }
+      }
+    },
+    MuiIconButton: {
+      root: {
+        "&:hover": {
+          backgroundColor: "rgba(0, 0, 0, 0)"
+        }
+      }
+    }
   }
   //Other colors to use #cee1d5, #b5a282, #e0462b
 
