@@ -8,6 +8,7 @@ const theme = {
       default: "#333"
     },
     text: {
+      primary: "#ccd6f6",
       secondary: "#64ffda"
     }
     // action: {
@@ -22,14 +23,13 @@ const theme = {
   },
   overrides: {
     MuiButton: {
-      textPrimary: {
-        "&:hover": {
-          backgroundColor: "rgba(0, 0, 0, 0)"
-        }
-      }
-    },
-    MuiButton: {
       root: {
+        "&:hover": {
+          backgroundColor: "rgba(0,0,0,0)",
+          color: "#64ffda"
+        }
+      },
+      textPrimary: {
         "&:hover": {
           backgroundColor: "rgba(0, 0, 0, 0)"
         }
@@ -38,7 +38,16 @@ const theme = {
     MuiIconButton: {
       root: {
         "&:hover": {
-          backgroundColor: "rgba(0, 0, 0, 0)"
+          backgroundColor: "rgba(0, 0, 0, 0)",
+          color: "#64ffda"
+        }
+      }
+    },
+    MuiListItem: {
+      button: {
+        "&:hover": {
+          backgroundColor: "rgba(0,0,0,0)",
+          color: "#64ffda"
         }
       }
     }

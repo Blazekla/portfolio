@@ -54,11 +54,6 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexWrap: "nowrap",
     backgroundColor: "transparent"
-  },
-  iconButton: {
-    "&:hover": {
-      backgroundColor: "rgba(0, 0, 0, 0)"
-    }
   }
 }));
 
@@ -125,7 +120,6 @@ function MenuAppBar() {
                       aria-label="Show Projects section"
                       color="inherit"
                       href="#projects"
-                      classes={{ root: classes.iconButton }}
                     >
                       <Typography>1. Projects</Typography>
                     </IconButton>

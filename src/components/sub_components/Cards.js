@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import Link from "@material-ui/core/Link";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   card: {
     transition: "all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)",
     "&:hover": {
@@ -23,8 +23,13 @@ const useStyles = makeStyles({
   },
   cardContent: {
     textAlign: "center"
+  },
+  link: {
+    "&:hover": {
+      color: theme.palette.secondary.main
+    }
   }
-});
+}));
 
 function ContentCard(props) {
   const classes = useStyles();
@@ -44,7 +49,12 @@ function ContentCard(props) {
 
       <CardActions className={classes.cardAction}>
         <Button size="small" color="primary">
-          <Link color="textPrimary" href={props.code} target="_blank">
+          <Link
+            color="textPrimary"
+            href={props.code}
+            target="_blank"
+            className={classes.link}
+          >
             View Code
           </Link>
         </Button>

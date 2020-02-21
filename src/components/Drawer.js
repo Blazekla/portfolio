@@ -12,7 +12,7 @@ import AccountBoxIcon from "@material-ui/icons/AccountBox";
 
 import MoreIcon from "@material-ui/icons/MoreVert";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   list: {
     width: 250
   },
@@ -28,7 +28,10 @@ const useStyles = makeStyles({
   },
   listItem: {
     justifyContent: "center",
-    marginBottom: "50px"
+    marginBottom: "50px",
+    "&:hover": {
+      textAlign: "right"
+    }
   },
   icon: {
     flex: "1 1 50%",
@@ -36,7 +39,7 @@ const useStyles = makeStyles({
     justifyContent: "flex-end",
     paddingRight: "5px"
   }
-});
+}));
 
 export default function SideDrawer() {
   const classes = useStyles();
@@ -74,7 +77,7 @@ export default function SideDrawer() {
           <ListItemIcon classes={{ root: classes.icon }}>
             <WorkIcon color="secondary" />
           </ListItemIcon>
-          <ListItemText classes={{ root: classes.text }} secondary="Projects" />
+          <ListItemText classes={{ root: classes.text }} primary="Projects" />
         </ListItem>
         <ListItem
           classes={{ root: classes.listItem }}
@@ -86,7 +89,7 @@ export default function SideDrawer() {
           <ListItemIcon classes={{ root: classes.icon }}>
             <AccountBoxIcon color="secondary" />
           </ListItemIcon>
-          <ListItemText classes={{ root: classes.text }} secondary="About" />
+          <ListItemText classes={{ root: classes.text }} primary="About" />
         </ListItem>
         <ListItem
           button
@@ -97,7 +100,7 @@ export default function SideDrawer() {
           <ListItemIcon classes={{ root: classes.icon }}>
             <EmailIcon color="secondary" />
           </ListItemIcon>
-          <ListItemText classes={{ root: classes.text }} secondary="Contact" />
+          <ListItemText classes={{ root: classes.text }} primary="Contact" />
         </ListItem>
       </List>
     </div>
@@ -113,7 +116,6 @@ export default function SideDrawer() {
         anchor="right"
         open={state.right}
         onClose={toggleDrawer("right", false)}
-        // className={classes.root}
         classes={{ paper: classes.root }}
       >
         {sideList("right")}
