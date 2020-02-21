@@ -40,7 +40,8 @@ function About() {
         </Typography>
 
         <Typography style={{ color: color }}>
-          React, ES6+, HTML, CSS, Material-UI, Netlify, Node.js, Express, etc..
+          React, ES6+, HTML, CSS, Material-UI, Redux, Axios, Netlify, Node.js,
+          Express.
         </Typography>
       </div>
     </CSSTransition>

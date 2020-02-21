@@ -37,7 +37,7 @@ function Projects() {
         }}
       >
         {pageData.project.map(
-          ({ title, github, external, tech, description }, id) => {
+          ({ title, github, external, tech, image, description }, id) => {
             return (
               <Grid
                 item
@@ -52,6 +52,7 @@ function Projects() {
                   code={github}
                   external={external}
                   technology={tech}
+                  image={image}
                   desc={description}
                 />
               </Grid>

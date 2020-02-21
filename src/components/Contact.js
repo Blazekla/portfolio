@@ -44,7 +44,7 @@ function Contact() {
 
         <Button
           variant="contained"
-          color="secondary"
+          color="primary"
           href="mailto:luiscristodev@gmail.com"
           style={{ padding: "20px 28px", marginTop: "30px" }}
         >
