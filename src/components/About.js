@@ -27,7 +27,7 @@ function About() {
         style={{
           backgroundColor: "inherit",
           textAlign: "center",
-          marginBottom: "50px",
+          marginBottom: "100px",
           paddingTop: "70px"
         }}
       >

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import ContentCard from "./sub_components/Cards";
-
 import { CSSTransition } from "react-transition-group";
 import pageData from "./data/pageData";
+import Typography from "@material-ui/core/Typography";
 
 function Projects() {
   //use the following to enable the animation on first load//
@@ -27,43 +27,48 @@ function Projects() {
         exitActive: ""
       }}
     >
-      <Grid
-        container
-        direction="row"
-        alignItems="flex-start"
-        justify="center"
-        style={{
-          margin: "0px auto 100px"
-        }}
-      >
-        {pageData.project.map(
-          (
-            { title, github, external, tech, image, imageName, description },
-            id
-          ) => {
-            return (
-              <Grid
-                item
-                key={id}
-                xs={12}
-                sm={6}
-                md={6}
-                style={{ padding: "16px" }}
-              >
-                <ContentCard
-                  title={title}
-                  code={github}
-                  external={external}
-                  technology={tech}
-                  image={image}
-                  imageName={imageName} //refactor to omit passing down this prop
-                  desc={description}
-                />
-              </Grid>
-            );
-          }
-        )}
-      </Grid>
+      <React.Fragment>
+        <Typography align="center" variant="h4" color="secondary">
+          Projects
+        </Typography>
+        <Grid
+          container
+          direction="row"
+          alignItems="flex-start"
+          justify="center"
+          style={{
+            margin: "0px auto 100px"
+          }}
+        >
+          {pageData.project.map(
+            (
+              { title, github, external, tech, image, imageName, description },
+              id
+            ) => {
+              return (
+                <Grid
+                  item
+                  key={id}
+                  xs={12}
+                  sm={6}
+                  md={6}
+                  style={{ padding: "16px" }}
+                >
+                  <ContentCard
+                    title={title}
+                    code={github}
+                    external={external}
+                    technology={tech}
+                    image={image}
+                    imageName={imageName} //refactor to omit passing down this prop
+                    desc={description}
+                  />
+                </Grid>
+              );
+            }
+          )}
+        </Grid>
+      </React.Fragment>
     </CSSTransition>
   );
 }
