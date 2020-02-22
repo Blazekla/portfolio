@@ -37,14 +37,17 @@ function Projects() {
         }}
       >
         {pageData.project.map(
-          ({ title, github, external, tech, image, description }, id) => {
+          (
+            { title, github, external, tech, image, imageName, description },
+            id
+          ) => {
             return (
               <Grid
                 item
                 key={id}
                 xs={12}
                 sm={6}
-                md={4}
+                md={6}
                 style={{ padding: "16px" }}
               >
                 <ContentCard
@@ -53,6 +56,7 @@ function Projects() {
                   external={external}
                   technology={tech}
                   image={image}
+                  imageName={imageName} //refactor to omit passing down this prop
                   desc={description}
                 />
               </Grid>

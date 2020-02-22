@@ -39,14 +39,11 @@ function ContentCard(props) {
         <CardMedia
           component="img"
           alt="Waving photogenic seal"
-          image={require("../static/images/Pinterest-project.jpg")}
-          // image={require(`'${props.image}'`)}
-          // image={require(`${props.image}`)}
-          // image={require(props.image)}
-
+          image={props.image[props.imageName]}
           title="Photogenic Seal Pup"
         />
-        {console.log(props.image)}
+
+        {/* {console.log(props.image[props.imageName])} */}
       </CardActionArea>
       <CardContent className={classes.cardContent}>
         <Typography color="secondary">{props.title}</Typography>
