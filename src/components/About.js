@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Typography from "@material-ui/core/Typography";
-import { useTheme } from "@material-ui/core/styles";
 import { CSSTransition } from "react-transition-group";
 
 function About() {
@@ -13,8 +12,6 @@ function About() {
   }, []);
   /////End of animation hooks
 
-  const theme = useTheme();
-  const color = theme.palette.primary.contrastText;
   return (
     <CSSTransition
       in={isMounted}
