@@ -74,7 +74,6 @@ function MenuAppBar() {
         in={isMounted}
         timeout={1000}
         mountOnEnter
-        unmountOnExit
         classNames="fadedown"
         onEntered={() => setIsAlive(true)}
       >

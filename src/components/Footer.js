@@ -29,7 +29,10 @@ const useStyles = makeStyles(theme => ({
     // backgroundColor: "#333",
     // backgroundColor: "#293d5a",
     backgroundColor: "#020c1b",
-    padding: theme.spacing(6)
+    padding: theme.spacing(6),
+    height: "auto",
+    display: "flex",
+    flexDirection: "column"
   }
 }));
 
@@ -47,33 +50,33 @@ function Footer() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <CSSTransition
+      {/* <CSSTransition
         in={isMounted}
         timeout={300}
         mountOnEnter
         classNames="fadeup"
-      >
-        <footer id="footer" className={classes.footer}>
-          <Typography
-            variant="h6"
-            align="center"
-            gutterBottom
-            style={{ color: theme.palette.primary.contrastText }}
-          >
-            Philosophy
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            color="textSecondary"
-            component="p"
-            style={{ color: theme.palette.primary.contrastText }}
-          >
-            Live A Focused And Strenuous Life
-          </Typography>
-          <Copyright />
-        </footer>
-      </CSSTransition>
+      > */}
+      <footer id="footer" className={classes.footer}>
+        <Typography
+          variant="h6"
+          align="center"
+          gutterBottom
+          style={{ color: theme.palette.primary.contrastText }}
+        >
+          Philosophy
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          align="center"
+          color="textSecondary"
+          component="p"
+          style={{ color: theme.palette.primary.contrastText }}
+        >
+          Live A Focused And Strenuous Life
+        </Typography>
+        <Copyright />
+      </footer>
+      {/* </CSSTransition> */}
     </React.Fragment>
   );
 }
