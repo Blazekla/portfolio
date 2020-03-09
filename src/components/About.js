@@ -1,9 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import Typography from "@material-ui/core/Typography";
-<<<<<<< HEAD
-import { CSSTransition } from "react-transition-group";
-=======
->>>>>>> projectName
 
 import ScrollReveal from "scrollreveal";
 
@@ -28,11 +24,8 @@ function About() {
     ScrollReveal().reveal(revealContainer.current, slideUp);
   }, []);
 
-<<<<<<< HEAD
-=======
   // const theme = useTheme();
   // const color = theme.palette.primary.contrastText;
->>>>>>> projectName
   return (
     <div
       id="about"
