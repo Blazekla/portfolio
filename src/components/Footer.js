@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Typography, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
-
-import CSSTransition from "react-transition-group/CSSTransition";
 
 function Copyright() {
   const theme = useTheme();
@@ -26,54 +24,39 @@ function Copyright() {
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    // backgroundColor: "#333",
-    // backgroundColor: "#293d5a",
     backgroundColor: "#020c1b",
-    padding: theme.spacing(6)
+    padding: theme.spacing(6),
+    height: "auto",
+    display: "flex",
+    flexDirection: "column"
   }
 }));
 
 function Footer() {
-  //hooks below help to trigger animations upon render
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 4750);
-    return () => clearTimeout(timeout);
-  }, []);
-  /////
-
   const theme = useTheme();
   const classes = useStyles();
   return (
     <React.Fragment>
-      <CSSTransition
-        in={isMounted}
-        timeout={300}
-        mountOnEnter
-        classNames="fadeup"
-      >
-        <footer id="footer" className={classes.footer}>
-          <Typography
-            variant="h6"
-            align="center"
-            gutterBottom
-            style={{ color: theme.palette.primary.contrastText }}
-          >
-            Philosophy
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            color="textSecondary"
-            component="p"
-            style={{ color: theme.palette.primary.contrastText }}
-          >
-            Live A Focused And Strenuous Life
-          </Typography>
-          <Copyright />
-        </footer>
-      </CSSTransition>
+      <footer id="footer" className={classes.footer}>
+        <Typography
+          variant="h6"
+          align="center"
+          gutterBottom
+          style={{ color: theme.palette.primary.contrastText }}
+        >
+          Philosophy
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          align="center"
+          color="textSecondary"
+          component="p"
+          style={{ color: theme.palette.primary.contrastText }}
+        >
+          Live A Focused And Strenuous Life
+        </Typography>
+        <Copyright />
+      </footer>
     </React.Fragment>
   );
 }

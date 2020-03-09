@@ -33,7 +33,7 @@ function HeroUnit() {
           in={isMounted}
           timeout={500}
           mountOnEnter
-          unmountOnExit
+          // unmountOnExit
           classNames={{
             enter: "fadeup-enter",
             enterActive: "fadeup-enter-active",
@@ -57,7 +57,7 @@ function HeroUnit() {
           in={isMounted}
           timeout={600}
           mountOnEnter
-          unmountOnExit
+          // unmountOnExit
           classNames="fadeup"
         >
           <Typography
@@ -76,7 +76,7 @@ function HeroUnit() {
           in={isMounted}
           timeout={700}
           mountOnEnter
-          unmountOnExit
+          // unmountOnExit
           classNames="fadeup"
         >
           <Typography
@@ -101,7 +101,7 @@ function HeroUnit() {
               in={isMounted}
               timeout={900}
               mountOnEnter
-              unmountOnExit
+              // unmountOnExit
               classNames="fadeup"
             >
               <div

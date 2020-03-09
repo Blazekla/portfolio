@@ -38,7 +38,11 @@ function App() {
         >
           <MenuAppBar />
           <div className="content">
-            <Container maxWidth="md" className="mainContent">
+            <Container
+              maxWidth="md"
+              className="mainContent"
+              style={{ minHeight: "100vh" }}
+            >
               <HeroBanner />
               <Container
                 id="projects"
