@@ -16,7 +16,7 @@ function Head() {
       <meta itemProp="description" content={pageData.head.siteDescription} />
       {/* <meta itemProp="image" content={}/> */}
 
-      <meta name="theme-color" content="#000000" />
+      <meta name="theme-color" content="#546686" />
     </Helmet>
   );
 }
