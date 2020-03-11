@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import { Grid } from "@material-ui/core";
 import ContentCard from "./sub_components/Cards";
-
 import pageData from "./data/pageData";
-import Typography from "@material-ui/core/Typography";
 import ScrollReveal from "scrollreveal";
+import { Grid } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
 
 function Projects() {
   const revealContainer = useRef(null);
@@ -71,7 +70,6 @@ function Projects() {
                   technology={tech}
                   imageSource={patpat[src]}
                   alt={alt}
-                  // imageName={imageName} //refactor to omit passing down this prop
                   desc={description}
                 />
               </Grid>

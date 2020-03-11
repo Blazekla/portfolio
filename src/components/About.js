@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import Typography from "@material-ui/core/Typography";
-
 import ScrollReveal from "scrollreveal";
+import Typography from "@material-ui/core/Typography";
 
 function About() {
   const revealContainer = useRef(null);
@@ -24,8 +23,6 @@ function About() {
     ScrollReveal().reveal(revealContainer.current, slideUp);
   }, []);
 
-  // const theme = useTheme();
-  // const color = theme.palette.primary.contrastText;
   return (
     <div
       id="about"

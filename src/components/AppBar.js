@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Drawer from "./Drawer";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import AppBar from "@material-ui/core/AppBar";
 import ToolBar from "@material-ui/core/Toolbar";
@@ -7,8 +8,6 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { CSSTransition } from "react-transition-group";
 
-import Drawer from "./Drawer";
-
 const useStyles = makeStyles(theme => ({
   title: {},
   sectionDesktop: {
@@ -16,11 +15,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up("sm")]: {
       display: "flex"
     }
-  },
-  appBar: {
-    alignItems: "center",
-    justifyContent: "space-between",
-    borderRadius: "16px"
   },
   sectionMobile: {
     display: "flex",
@@ -47,7 +41,6 @@ const useStyles = makeStyles(theme => ({
     "@media (min-width: 1200px)": {
       maxWidth: "1140px"
     },
-    // minHeight: "50px",
     flex: "1",
     alignItems: "center",
     justifyContent: "space-between",
@@ -78,10 +71,7 @@ function MenuAppBar() {
         onEntered={() => setIsAlive(true)}
       >
         <div>
-          <AppBar
-            position="fixed"
-            // className={classes.appBar}
-          >
+          <AppBar position="fixed">
             <ToolBar className={classes.toolbarContainer}>
               <div>
                 <CSSTransition

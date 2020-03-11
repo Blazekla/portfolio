@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
+import pageData from "./data/pageData";
+import "../styles/projects.css";
+import { CSSTransition } from "react-transition-group";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { Button } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
-
-import { CSSTransition } from "react-transition-group";
-
-import pageData from "./data/pageData";
-import "../styles/projects.css";
 
 function HeroUnit() {
   const [isMounted, setIsMounted] = useState(false);
@@ -33,7 +31,6 @@ function HeroUnit() {
           in={isMounted}
           timeout={500}
           mountOnEnter
-          // unmountOnExit
           classNames={{
             enter: "fadeup-enter",
             enterActive: "fadeup-enter-active",
@@ -57,7 +54,6 @@ function HeroUnit() {
           in={isMounted}
           timeout={600}
           mountOnEnter
-          // unmountOnExit
           classNames="fadeup"
         >
           <Typography
@@ -76,7 +72,6 @@ function HeroUnit() {
           in={isMounted}
           timeout={700}
           mountOnEnter
-          // unmountOnExit
           classNames="fadeup"
         >
           <Typography
@@ -101,7 +96,6 @@ function HeroUnit() {
               in={isMounted}
               timeout={900}
               mountOnEnter
-              // unmountOnExit
               classNames="fadeup"
             >
               <div

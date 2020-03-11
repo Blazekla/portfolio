@@ -9,7 +9,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import WorkIcon from "@material-ui/icons/Work";
 import EmailIcon from "@material-ui/icons/Email";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
-
 import MoreIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles(theme => ({
