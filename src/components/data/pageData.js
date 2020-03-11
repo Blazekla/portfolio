@@ -1,5 +1,5 @@
-import pinterest from "../static/images/Pinterest-project.jpg";
-import mern from "../static/images/MERN-project.jpg";
+// import pinterest from "../static/images/Pinterest-project.jpg";
+// import mern from "../static/images/MERN-project.jpg";
 
 //Refactor key imageName so it isn't necessary to pass to component
 const pageData = {
@@ -16,7 +16,7 @@ const pageData = {
       external: "https://still-brushlands-77127.herokuapp.com/",
       tech: "",
       // image: "../static/images/MERN-project.jpg",
-      image: { mern },
+      // image: { mern },
       imageName: "mern",
       description: "#"
     },
@@ -26,7 +26,7 @@ const pageData = {
       external: "https://elastic-kirch-ad2656.netlify.com/",
       tech: "",
 
-      image: { pinterest },
+      // image: { pinterest },
       imageName: "pinterest",
       // image: "./Pinterest-project.jpg",
       // image: "../static/images/Pinterest-project.jpg",

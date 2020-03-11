@@ -6,6 +6,8 @@ import pageData from "./data/pageData";
 import Typography from "@material-ui/core/Typography";
 import ScrollReveal from "scrollreveal";
 
+import test from "./data/images";
+
 function Projects() {
   const revealContainer = useRef(null);
 
@@ -28,6 +30,19 @@ function Projects() {
     return ScrollReveal().reveal(revealContainer.current, slideUp);
   }, []);
 
+  //Code below to import dynamic images used for project
+  function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => {
+      images[item.replace("./", "")] = r(item);
+    });
+    return images;
+  }
+
+  // const patpat = importAll(require.context("../", true, /\.jpg$/));
+  const patpat = importAll(require.context("./static/images", false, /\.jpg$/));
+  //end of dynamic image import
+
   return (
     <div ref={revealContainer}>
       <Typography align="center" variant="h4" color="secondary">
@@ -42,6 +57,8 @@ function Projects() {
           margin: "0px auto 100px"
         }}
       >
+        {test.map(item => console.log(item.alt))}
+        {/* {console.log(test[0])} */}
         {pageData.project.map(
           (
             { title, github, external, tech, image, imageName, description },
@@ -56,7 +73,16 @@ function Projects() {
                 md={6}
                 style={{ padding: "16px" }}
               >
-                <ContentCard
+                {test.map(({ title, src, alt, full }, id) => {
+                  console.log("trying now...", src);
+                  // let requireTest = require(src);
+                  // console.log(patpat[full]);
+                  console.log(patpat);
+                  return (
+                    <img key={id} src={patpat[full]} title={title} alt={alt} />
+                  );
+                })}
+                {/* <ContentCard
                   title={title}
                   code={github}
                   external={external}
@@ -64,7 +90,8 @@ function Projects() {
                   image={image}
                   imageName={imageName} //refactor to omit passing down this prop
                   desc={description}
-                />
+                  test={test[id].src}
+                /> */}
               </Grid>
             );
           }

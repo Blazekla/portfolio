@@ -36,10 +36,12 @@ function ContentCard(props) {
   return (
     <Card className={classes.card}>
       <CardActionArea disableRipple={true}>
+        {console.log("require result ")}
         <CardMedia
           component="img"
           alt="Waving photogenic seal"
-          image={props.image[props.imageName]}
+          // image={props.image[props.imageName]}
+          image={props.test}
           title="Photogenic Seal Pup"
         />
 
