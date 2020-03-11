@@ -1,7 +1,3 @@
-import pinterest from "../static/images/Pinterest-project.jpg";
-import mern from "../static/images/MERN-project.jpg";
-
-//Refactor key imageName so it isn't necessary to pass to component
 const pageData = {
   hero: {
     title: "Hi, my name is",
@@ -15,9 +11,8 @@ const pageData = {
       github: "https://github.com/Blazekla/MERN-Shopping-List",
       external: "https://still-brushlands-77127.herokuapp.com/",
       tech: "",
-      // image: "../static/images/MERN-project.jpg",
-      image: { mern },
-      imageName: "mern",
+      src: "MERN-project.jpg",
+      alt: "Picture of the MERN project showcasing the list",
       description: "#"
     },
     {
@@ -25,11 +20,8 @@ const pageData = {
       github: "https://github.com/Blazekla/pinterest-project",
       external: "https://elastic-kirch-ad2656.netlify.com/",
       tech: "",
-
-      image: { pinterest },
-      imageName: "pinterest",
-      // image: "./Pinterest-project.jpg",
-      // image: "../static/images/Pinterest-project.jpg",
+      src: "Pinterest-project.jpg",
+      alt: "Picture of the Pinterest front page",
       description: "#"
     }
     // {
@@ -37,13 +29,17 @@ const pageData = {
     //   github: "",
     //   external: "",
     //   tech: "",
+    //   src:"",
+    //   alt:"",
     //   description: "#"
     // },
     // {
     //   title: "4",
-    //   github: "",
+    //  github: "",
     //   external: "",
     //   tech: "",
+    //   src:"",
+    //   alt:"",
     //   description: "#"
     // },
     // {
@@ -51,6 +47,8 @@ const pageData = {
     //   github: "",
     //   external: "",
     //   tech: "",
+    //   src:"",
+    //   alt:"",
     //   description: "#"
     // },
     // {
@@ -58,6 +56,8 @@ const pageData = {
     //   github: "",
     //   external: "",
     //   tech: "",
+    //   src:"",
+    //   alt:"",
     //   description: "#"
     // }
   ]

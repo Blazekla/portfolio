@@ -28,6 +28,17 @@ function Projects() {
     return ScrollReveal().reveal(revealContainer.current, slideUp);
   }, []);
 
+  //Code below to import dynamic images used for project
+  function importAll(r) {
+    let images = {};
+    r.keys().forEach((item, index) => {
+      images[item.replace("./", "")] = r(item);
+    });
+    return images;
+  }
+  const patpat = importAll(require.context("./static/images", false, /\.jpg$/));
+  //end of dynamic image import
+
   return (
     <div ref={revealContainer}>
       <Typography align="center" variant="h4" color="secondary">
@@ -43,10 +54,7 @@ function Projects() {
         }}
       >
         {pageData.project.map(
-          (
-            { title, github, external, tech, image, imageName, description },
-            id
-          ) => {
+          ({ title, github, external, tech, src, alt, description }, id) => {
             return (
               <Grid
                 item
@@ -61,8 +69,9 @@ function Projects() {
                   code={github}
                   external={external}
                   technology={tech}
-                  image={image}
-                  imageName={imageName} //refactor to omit passing down this prop
+                  imageSource={patpat[src]}
+                  alt={alt}
+                  // imageName={imageName} //refactor to omit passing down this prop
                   desc={description}
                 />
               </Grid>
