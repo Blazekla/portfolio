@@ -36,8 +36,6 @@ function Projects() {
     });
     return images;
   }
-
-  // const patpat = importAll(require.context("../", true, /\.jpg$/));
   const patpat = importAll(require.context("./static/images", false, /\.jpg$/));
   //end of dynamic image import
 
