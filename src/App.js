@@ -1,17 +1,17 @@
 import React from "react";
-
-import "typeface-roboto";
-import { CssBaseline } from "@material-ui/core";
-import Container from "@material-ui/core/Container";
-
+import Head from "./components/Head";
 import MenuAppBar from "./components/AppBar";
 import HeroBanner from "./components/HeroUnit";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
 import theme from "./styles/theme";
+
+import "typeface-roboto";
+import { CssBaseline } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
+
 import {
   createMuiTheme,
   ThemeProvider,
@@ -26,6 +26,7 @@ theming = responsiveFontSizes(theming);
 function App() {
   return (
     <React.Fragment>
+      <Head />
       <ThemeProvider theme={theming}>
         <CssBaseline />
         <div
