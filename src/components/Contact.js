@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from "react";
+import ScrollReveal from "scrollreveal";
 import Typography from "@material-ui/core/Typography";
 import { useTheme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-
-import ScrollReveal from "scrollreveal";
 
 function Contact() {
   const revealContainer = useRef(null);

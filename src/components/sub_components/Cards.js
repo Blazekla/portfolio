@@ -39,7 +39,6 @@ function ContentCard(props) {
         <CardMedia
           component="img"
           alt={props.alt}
-          // image={props.image[props.imageName]}
           image={props.imageSource}
           title="Photogenic Seal Pup"
         />

@@ -1,4 +1,12 @@
 const pageData = {
+  head: {
+    siteTitle: "Luis Cristo | React Developer",
+    siteDescription:
+      "Luis Cristo is a React Developer especializing in creating exceptionaly high-quality websites.",
+    siteKeywords:
+      "Luis Cristo, Luis, Cristo, react developer, web developer, front-end engineer, javascript, texas",
+    siteUrl: "https://luiscristo.com"
+  },
   hero: {
     title: "Hi, my name is",
     name: "Luis Cristo.",

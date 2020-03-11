@@ -54,7 +54,7 @@ const theme = {
   }
   //Other colors to use #cee1d5, #b5a282, #e0462b
 
-  //     Color Semantics
+  //     Alternative colors
   // Rhino	#324763	Primary
   // Timber Green	#1c3137	Info
   // Goblin	#449056	Success
