@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Drawer from "./Drawer";
+import Drawer from "./sub_components/Drawer";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import AppBar from "@material-ui/core/AppBar";
 import ToolBar from "@material-ui/core/Toolbar";
@@ -86,7 +86,7 @@ function MenuAppBar() {
                       transitionDelay: "500ms"
                     }}
                   >
-                    <Button color="inherit" href="/">
+                    <Button color="inherit" href="/" aria-label="Home Page">
                       <Typography>LC</Typography>
                     </Button>
                   </span>

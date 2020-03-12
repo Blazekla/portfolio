@@ -53,6 +53,7 @@ function Contact() {
         color="primary"
         href="mailto:luiscristodev@gmail.com"
         style={{ padding: "20px 28px", marginTop: "30px" }}
+        aria-label="Send Email"
       >
         Say Hello
       </Button>
