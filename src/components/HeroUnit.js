@@ -110,6 +110,7 @@ function HeroUnit() {
                   variant="contained"
                   color="primary"
                   href="mailto:luiscristodev@gmail.com"
+                  aria-label="send email"
                   style={{ padding: "20px 28px" }}
                 >
                   Get In Touch

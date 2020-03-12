@@ -40,7 +40,7 @@ function ContentCard(props) {
           component="img"
           alt={props.alt}
           image={props.imageSource}
-          title="Photogenic Seal Pup"
+          title={props.title}
         />
       </CardActionArea>
       <CardContent className={classes.cardContent}>
@@ -54,12 +54,20 @@ function ContentCard(props) {
             href={props.code}
             target="_blank"
             className={classes.link}
+            aria-label="View Code"
+            rel="noopener"
           >
             View Code
           </Link>
         </Button>
         <Button size="small" color="primary">
-          <Link color="textSecondary" href={props.external} target="_blank">
+          <Link
+            color="textSecondary"
+            href={props.external}
+            target="_blank"
+            aria-label="Live Demo"
+            rel="noopener"
+          >
             Live Demo
           </Link>
         </Button>
