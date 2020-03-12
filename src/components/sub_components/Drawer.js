@@ -71,6 +71,7 @@ export default function SideDrawer() {
           classes={{ root: classes.listItem }}
           button
           component="a"
+          aria-label="Show Projects Section"
           href="#projects"
         >
           <ListItemIcon classes={{ root: classes.icon }}>
@@ -83,6 +84,7 @@ export default function SideDrawer() {
           button
           component="a"
           href="#about"
+          aria-label="Show About Section"
           color="secondary"
         >
           <ListItemIcon classes={{ root: classes.icon }}>
@@ -94,6 +96,7 @@ export default function SideDrawer() {
           button
           component="a"
           href="#contact"
+          aria-label="Show Contact Section"
           classes={{ root: classes.listItem }}
         >
           <ListItemIcon classes={{ root: classes.icon }}>
@@ -107,7 +110,11 @@ export default function SideDrawer() {
 
   return (
     <div>
-      <Button onClick={toggleDrawer("right", true)} color="inherit">
+      <Button
+        onClick={toggleDrawer("right", true)}
+        color="inherit"
+        aria-label="Expand Menu"
+      >
         <MoreIcon />
       </Button>
 
