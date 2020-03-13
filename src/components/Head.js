@@ -25,7 +25,7 @@ function Head() {
       <meta property="og:description" content={pageData.head.description} />
       <meta property="og:site_name" content={pageData.head.title} />
 
-      <meta property="og:image:width" content="1904" />
+      <meta property="og:image:width" content="1899" />
       <meta property="og:image:height" content="964" />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:locale" content="en_US" />

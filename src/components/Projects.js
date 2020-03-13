@@ -35,7 +35,9 @@ function Projects() {
     });
     return images;
   }
-  const patpat = importAll(require.context("./static/images", false, /\.jpg$/));
+  const imageGallery = importAll(
+    require.context("./static/images", false, /\.(jpg?g|png)$/)
+  );
   //end of dynamic image import
 
   return (
@@ -68,7 +70,7 @@ function Projects() {
                   code={github}
                   external={external}
                   technology={tech}
-                  imageSource={patpat[src]}
+                  imageSource={imageGallery[src]}
                   alt={alt}
                   desc={description}
                 />

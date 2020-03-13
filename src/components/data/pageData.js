@@ -31,16 +31,16 @@ const pageData = {
       src: "Pinterest-project.jpg",
       alt: "Picture of the Pinterest front page",
       description: "#"
+    },
+    {
+      title: "Portfolio",
+      github: "https://github.com/Blazekla/portfolio",
+      external: "/",
+      tech: "",
+      src: "homepage.png",
+      alt: "Picture of the Portfolio page",
+      description: "#"
     }
-    // {
-    //   title: "3",
-    //   github: "",
-    //   external: "",
-    //   tech: "",
-    //   src:"",
-    //   alt:"",
-    //   description: "#"
-    // },
     // {
     //   title: "4",
     //  github: "",
