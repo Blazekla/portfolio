@@ -6,6 +6,7 @@ import image from "./static/images/homepage.png";
 function Head() {
   return (
     <Helmet>
+      <html lang="en" prefix="og: http://ogp.me/ns#" />
       <title itemProp="name" lang="en">
         {pageData.head.siteTitle}
       </title>
