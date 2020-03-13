@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import pageData from "./data/pageData";
+import image from "./static/images/homepage.png";
 
 function Head() {
   return (
@@ -14,17 +15,17 @@ function Head() {
 
       <meta itemProp="name" content={pageData.head.siteTitle} />
       <meta itemProp="description" content={pageData.head.siteDescription} />
-      {/* <meta itemProp="image" content={}/> */}
+      <meta itemProp="image" content={`${pageData.head.siteUrl}${image}`} />
 
       <meta property="og:title" content={pageData.head.title} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content="" />
+      <meta property="og:image" content={`${pageData.head.siteUrl}${image}`} />
       <meta property="og:url" content={pageData.head.siteUrl} />
       <meta property="og:description" content={pageData.head.description} />
       <meta property="og:site_name" content={pageData.head.title} />
 
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image:width" content="1904" />
+      <meta property="og:image:height" content="964" />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:locale" content="en_US" />
 
@@ -34,7 +35,7 @@ function Head() {
       <meta name="twitter:title" content={pageData.head.title} />
       <meta name="twitter:description" content={pageData.head.description} />
       <meta name="twitter:url" content={pageData.head.siteUrl} />
-      <meta name="twitter:image" content="" />
+      <meta name="twitter:image" content={`${pageData.head.siteUrl}${image}`} />
 
       <meta name="twitter:site" content="" />
       <meta name="twitter:creator" content="" />
