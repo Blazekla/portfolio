@@ -18,12 +18,12 @@ function Head() {
       <meta itemProp="description" content={pageData.head.siteDescription} />
       <meta itemProp="image" content={`${pageData.head.siteUrl}${image}`} />
 
-      <meta property="og:title" content={pageData.head.title} />
+      {/* <meta property="og:title" content={pageData.head.title} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${pageData.head.siteUrl}${image}`} />
       <meta property="og:url" content={pageData.head.siteUrl} />
       <meta property="og:description" content={pageData.head.description} />
-      <meta property="og:site_name" content={pageData.head.title} />
+      <meta property="og:site_name" content={pageData.head.title} /> */}
 
       <meta property="og:image:width" content="1899" />
       <meta property="og:image:height" content="964" />
