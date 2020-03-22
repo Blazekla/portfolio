@@ -39,14 +39,6 @@ function Footer() {
     <React.Fragment>
       <footer id="footer" className={classes.footer}>
         <Typography
-          variant="h6"
-          align="center"
-          gutterBottom
-          style={{ color: theme.palette.primary.contrastText }}
-        >
-          Philosophy
-        </Typography>
-        <Typography
           variant="subtitle1"
           align="center"
           color="textSecondary"

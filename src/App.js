@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "./components/Head";
-import MenuAppBar from "./components/AppBar";
+import MenuNavBar from "./components/NavBar";
 import HeroBanner from "./components/HeroUnit";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -39,7 +39,7 @@ function App() {
               minHeight: "100vh"
             }}
           >
-            <MenuAppBar />
+            <MenuNavBar />
             <div className="content">
               <Container
                 maxWidth="md"

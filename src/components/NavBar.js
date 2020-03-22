@@ -9,7 +9,6 @@ import Typography from "@material-ui/core/Typography";
 import { CSSTransition } from "react-transition-group";
 
 const useStyles = makeStyles(theme => ({
-  title: {},
   sectionDesktop: {
     display: "none",
     [theme.breakpoints.up("sm")]: {
