@@ -17,7 +17,7 @@ const pageData = {
     {
       title: "MERN Shopping List",
       github: "https://github.com/Blazekla/MERN-Shopping-List",
-      external: "https://still-brushlands-77127.herokuapp.com/",
+      external: "https://mern-shopping-list-2020.herokuapp.com/",
       tech: "",
       src: "MERN-project.jpg",
       alt: "Picture of the MERN project showcasing the list",
@@ -26,7 +26,7 @@ const pageData = {
     {
       title: "Pinterest Clone",
       github: "https://github.com/Blazekla/pinterest-project",
-      external: "https://elastic-kirch-ad2656.netlify.com/",
+      external: "https://pinterestproject.netlify.com",
       tech: "",
       src: "Pinterest-project.jpg",
       alt: "Picture of the Pinterest front page",
