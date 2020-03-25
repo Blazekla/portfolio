@@ -41,33 +41,6 @@ const pageData = {
       alt: "Picture of the Portfolio page",
       description: "#"
     }
-    // {
-    //   title: "4",
-    //  github: "",
-    //   external: "",
-    //   tech: "",
-    //   src:"",
-    //   alt:"",
-    //   description: "#"
-    // },
-    // {
-    //   title: "5",
-    //   github: "",
-    //   external: "",
-    //   tech: "",
-    //   src:"",
-    //   alt:"",
-    //   description: "#"
-    // },
-    // {
-    //   title: "6",
-    //   github: "",
-    //   external: "",
-    //   tech: "",
-    //   src:"",
-    //   alt:"",
-    //   description: "#"
-    // }
   ]
 };
 
